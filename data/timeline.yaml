@@ -1,0 +1,22 @@
+- h:
+    en: Bachelor in computer engineering
+    de: Bachelor in Technische Informatik
+  c: TH-OWL
+  d: 2016-2019
+  t: >-
+    Note 1.8
+
+  x: edu
+
+- h: Headline
+  c: company
+  d: startDate-endDate or date
+  t: >-
+    free text here,
+    can be multi line
+
+- h: Undefined entry
+
+- h: Made up job
+  c: made up company
+  x: job
