@@ -3,6 +3,8 @@ import '../css/main.scss';
 import { loadTimeline, TimelineEntry, LString, getLocalized } from './DataLoader';
 
 // --------------------------- TODOs -------------------------------
+// add a takeawaf field to every thing
+// parse dates
 // -----------------------------------------------------------------
 
 const TIMELINE = loadTimeline();
@@ -11,9 +13,10 @@ let CURRENT_LANG = "de";//DBG
 
 export default function App() {
   return <div className="app">
-    <h1>Test</h1>
-    {JSON.stringify(TIMELINE)}
-    {TIMELINE.map(SimpleTimelineDisplay)}
+    <h1>Timeline</h1>
+    <div className="timeline">
+      {TIMELINE.map(SimpleTimelineDisplay)}
+    </div>
   </div>
 }
 
@@ -28,11 +31,23 @@ function LocalizedField(props: { className?: string, text: LString, defaultText?
   }
 }
 
+function MultiLineText(props: { className?: string, text: string }) {
+  return <div className={props.className}>
+    {props.text.split('\n').map((item, i) => <p key={i}>{item}</p>)}
+  </div>
+}
+
 function SimpleTimelineDisplay(entry: TimelineEntry) {
   return <div className="timeline-entry" key={entry.id}>
-    <LocalizedField className="headline" text={entry.headline} defaultText="<No title>" />
-    <LocalizedField className="company" text={entry.company} defaultText="<No company>" />
-    <LocalizedField className="date" text={entry.date} />
-    <LocalizedField className="description" text={entry.description} />
+    <div className="date-div">
+      <LocalizedField className="date" text={entry.date} />
+    </div>
+    <div className="content-div">
+      <LocalizedField className="headline" text={entry.headline} defaultText="<No title>" />
+      <LocalizedField className="company" text={entry.company} />
+      {entry.description &&
+        <MultiLineText className="description" text={L(entry.description)} />
+      }
+    </div>
   </div>
 }

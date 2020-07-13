@@ -2,24 +2,59 @@ $big-screen: "only screen and (min-width: 768px)";
 $medium-screen: "only screen and (min-width: 500px)";
 
 #root {
+  h1 {
+    text-align: center;
+  }
+}
+
+.timeline {
+  width: 700px;
+  margin: auto;
 }
 
 .timeline-entry {
+  display: flex;
+  margin: 30px 0px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+
+  .date-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    padding-right: 15px;
+    border-right: 1px solid darkgray;
+    margin-right: 15px;
+  }
+
+  .content-div {
+    flex: 1;
+  }
+
   .headline {
-    margin-top: 30px;
+    text-align: center;
     font-size: 20px;
     font-weight: bold;
   }
 
   .company {
-    color: gray;
+    text-align: center;
+    color: #444;
   }
 
   .date {
-    color: blue;
+    color: black;
   }
 
   .description {
     font-style: italic;
+    margin-top: 10px;
+
+    & > p {
+      margin: 0px;
+    }
   }
 }

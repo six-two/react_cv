@@ -15,7 +15,7 @@ export interface TimelineEntry {
   company: LString,
   date: LString,
   description: LString,
-  type: "edu" | "job" | "?",
+  type: "edu" | "job" | "other" | "",
   id: number,
 }
 
