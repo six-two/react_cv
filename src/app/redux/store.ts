@@ -1,13 +1,16 @@
 import { createStore } from 'redux';
 import reducer from './reducer';
+import { TimelineEntry } from '../DataLoader';
 // import * as C from './constants';
 
 export interface ReduxState {
-  todo: string,
+  timelineEntries: TimelineEntry[],
+  language: string,
 }
 
 export const fallbackState: ReduxState = {
-  todo: "TODO",
+  timelineEntries: [],
+  language: "en",
 }
 
 let devTools = undefined;

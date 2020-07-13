@@ -1,2 +1,3 @@
 // Actions
-export const ACTION_TODO = "ACTION_TODO";
+export const ACTION_SET_LANGUAGE = "SET_LANGUAGE";
+export const ACTION_SET_TIMELINE_ENTRIES = "SET_TIMELINE_ENTRIES";
