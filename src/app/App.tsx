@@ -6,8 +6,9 @@ import LanguageChooser from './LanguageChooser';
 import '../css/main.scss';
 
 // --------------------------- TODOs -------------------------------
-// add a takeaway field to every thing
+// add a takeaway field to everything
 // parse dates
+// translate static content (like headers)
 // -----------------------------------------------------------------
 
 const TIMELINE = loadTimeline();

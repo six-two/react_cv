@@ -21,7 +21,7 @@ export function renderSimpleTimelineEntry(entry: TimelineEntry) {
     <div className="content-div">
       <LocalizedText className="headline" text={entry.headline} defaultText="<No title>" />
       <LocalizedText className="company" text={entry.company} />
-      <LocalizedText className="description" text={entry.description} />
+      <LocalizedText className="description" text={entry.description} multiLine={true} />
     </div>
   </div>
 }

@@ -1,34 +1,65 @@
 - h:
     en: Bachelor in computer engineering
     de: Bachelorstudium Technische Informatik
-  c: Technische Hochschule Ostwestfalen-Lippe, Lemgo (Deutschland)
+  c:
+    en: University of Applied Sciences and Arts, Lemgo (Germany)
+    de: Technische Hochschule Ostwestfalen-Lippe, Lemgo (Deutschland)
   d: 2016-09-01 - 2019-12-01
   x: edu
-  t: |-
-    - Inhalte: Eingebettete Systeme, Android App Entwicklung, Verteilte Systeme, Theoretische Informatik
-    - Studienarbeit: Angriffe auf WPA2-WLAN Netzwerke
-    - Bachelorarbeit: Entwicklung und Implementierung eines WLAN-Intrusion Detection Systems (in Python)
-    - Gesamtnote: 1,7
+  t:
+    en: |-
+      Low level programming in C and assembly language.
+      Development of an Android application in Java.
+      Security of WiFi networks.
+    de: |-
+      - Inhalte: Eingebettete Systeme, Android App Entwicklung, Verteilte Systeme, Theoretische Informatik
+      - Studienarbeit: Angriffe auf WPA2-WLAN Netzwerke
+      - Bachelorarbeit: Entwicklung und Implementierung eines WLAN-Intrusion Detection Systems (in Python)
+      - Gesamtnote: 1,7
 
 
-- h: Student job in cyber security
-  c: Fraunhofer IOSB-INA, Lemgo (Germany)
+- h:
+    en: Student job in cyber security
+    de: Studentische Hilfskraft in der Abteilung Cybersicherheit
+  c:
+    en: Fraunhofer IOSB-INA, Lemgo (Germany)
+    de: Fraunhofer IOSB-INA, Lemgo (Deutschland)
   d: 2017-05-16 - 2018-05-15
   x: job
-  t: |-
-    Design and Programming of Intrusion Detection Systems in Python.
-    Writing small python programs for a Raspberry Pi.
-    Setting up a Graylog and an Elasticsearch server.
+  t:
+    en: |-
+      Design and Programming of Intrusion Detection Systems in Python.
+      Writing small python programs for a Raspberry Pi.
+      Setting up a Graylog and an Elasticsearch server.
+    de: |-
+      - Entwurf und Programmierung eines Intrusion Detection Systems in Python (Demonstrator für Hannover Messe)
 
 - h: Factoryhack 2017 (Hackathon)
   d: 2017-03-03 - 2017-03-05
   x: other
 
 
-- h: Abitur
-  c: Engelbert-Kaempfer-Gymnasium, Lemgo (Deutschland)
+- h:
+    en: Abitur (upper secondary school leaving certificate)
+    de: Abitur
+  c:
+    en: Engelbert-Kaempfer-Gymnasium, Lemgo (Germany)
+    de: Engelbert-Kaempfer-Gymnasium, Lemgo (Deutschland)
   d: 2008 - 2016
   x: edu
-  t: |-
-    - Leistungskurse: Mathematik, Physik
-    - Gesamtnote: 1,8
+  t:
+    en: |-
+      - Major Subjects: mathematics, physics
+      - Grade: 1.8 (an a scale from 1.0 [best] to 5.0 [failed])
+    de: |-
+      - Leistungskurse: Mathematik, Physik
+      - Gesamtnote: 1,8
+
+- h:
+    en: Gap year
+    de: Auslandsjahr
+  c:
+    en: New Zealand
+    de: Neuseeland
+  d: 2020-02-25 - 2021
+  x: other

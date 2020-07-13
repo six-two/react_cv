@@ -5,8 +5,8 @@ import { setLanguage } from './redux/actions';
 import Dropdown from './Dropdown';
 
 const LANGUAGES = new Map<string, string>();
-LANGUAGES.set("en", "English");
-LANGUAGES.set("de", "Deutsch")
+LANGUAGES.set("en", "🇺🇸 English");
+LANGUAGES.set("de", "🇩🇪 Deutsch")
 
 
 interface Props {
