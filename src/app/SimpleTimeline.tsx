@@ -16,12 +16,20 @@ export function SimpleTimeline(props: Props) {
 export function renderSimpleTimelineEntry(entry: TimelineEntry) {
   return <div className="timeline-entry" key={entry.id}>
     <div className="date-div">
-      <LocalizedText className="date" text={entry.date} />
+      <div className="date">
+        <LocalizedText text={entry.date} />
+      </div>
     </div>
     <div className="content-div">
-      <LocalizedText className="headline" text={entry.headline} defaultText="<No title>" />
-      <LocalizedText className="company" text={entry.company} />
-      <LocalizedText className="description" text={entry.description} multiLine={true} />
+      <div className="headline">
+        <LocalizedText text={entry.headline} defaultText="<No title>" />
+      </div>
+      <div className="company">
+        <LocalizedText text={entry.company} />
+      </div>
+      <div className="description">
+        <LocalizedText text={entry.description} multiLine="text" />
+      </div>
     </div>
   </div>
 }

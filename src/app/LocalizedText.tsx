@@ -4,39 +4,56 @@ import { ReduxState } from './redux/store';
 import { LString, getLocalized } from './DataLoader';
 
 
-interface Props {
-  className?: string,
+interface LocalizedTextProps {
   text: LString,
   defaultText?: string,
-  multiLine?: boolean,
+  multiLine?: "text" | "list",
   lang: string,
 }
 
-const mapStateToProps = (state: ReduxState) => ({
-  lang: state.language,
-});
+export const MultiLineText = (props: { text: string }) => {
+  return <div className="multi-line">
+    {props.text.split('\n').map(
+      (item, i) =>
+        <p key={i}>
+          {item}
+        </p>
+    )}
+  </div>
+}
 
-const LocalizedText = (props: Props) => {
+export const List = (props: { entries: string[] }) => {
+  return <ul>
+    {props.entries.map(
+      (item, i) =>
+        <li key={i}>
+          {item}
+        </li>
+    )}
+  </ul>
+}
+
+const _LocalizedText = (props: LocalizedTextProps) => {
   let text = props.text || props.defaultText;
   if (text) {
-    const multiLine = props.multiLine === true;
-    const className = props.className + (multiLine ? " multi-line" : "");
     text = getLocalized(text, props.lang);
-
-    return <div className={className}>
-      {multiLine ?
-        text.split('\n').map(
-          (item, i) =>
-            <p key={i}>
-              {item}
-            </p>
-        )
-        : text
-      }
-    </div>
+    switch (props.multiLine) {
+      case undefined:
+        return <>{text}</>
+      case "text":
+        return <MultiLineText text={text} />
+      case "list":
+        return <List entries={text.split('\n')} />
+      default:
+        return <div>Invalid multiLine value: "{props.multiLine}"</div>
+    }
   } else {
     return null;
   }
 }
 
-export default connect(mapStateToProps)(LocalizedText);
+const mapStateToProps = (state: ReduxState) => ({
+  lang: state.language,
+});
+export const LocalizedText = connect(mapStateToProps)(_LocalizedText);
+export default LocalizedText;
