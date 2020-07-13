@@ -1,0 +1,13 @@
+headings:
+  cv:
+    en: CV
+    de: Lebenslauf
+  jobs:
+    en: Work experience
+    de: Berufserfahrung
+  edu:
+    en: Education
+    de: Ausbildung
+  other:
+    en: Other
+    de: Anderes

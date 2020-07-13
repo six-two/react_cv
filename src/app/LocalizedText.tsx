@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
-import { LString, getLocalized } from './DataLoader';
+import { LString, getLocalized } from './Localize';
 
 
 interface LocalizedTextProps {

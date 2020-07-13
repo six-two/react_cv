@@ -1,7 +1,7 @@
 import { Action } from './actions';
 import * as C from './constants';
 import { ReduxState, fallbackState } from './store';
-import { TimelineEntry } from '../DataLoader';
+import { TimelineEntry } from '../data/Timeline';
 
 
 export default function reducer(state: ReduxState | undefined, action: Action): ReduxState {

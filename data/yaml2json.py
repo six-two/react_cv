@@ -29,8 +29,8 @@ def yaml2json(inputFile, outputFile):
 
 
 if __name__ == "__main__":
-    for fileName in ["timeline"]:
+    for fileName in ["timeline", "labels"]:
         inputFile = "./{}.yaml".format(fileName)
-        outputFile = "../src/data/{}.json".format(fileName)
+        outputFile = "../src/app/data/{}.json".format(fileName)
         # print("{} -> {}".format(inputFile, outputFile))
         yaml2json(inputFile, outputFile)

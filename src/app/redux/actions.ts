@@ -1,6 +1,6 @@
 import * as C from './constants';
 import store from './store';
-import { TimelineEntry } from '../DataLoader';
+import { TimelineEntry } from '../data/Timeline';
 
 
 // dispatch

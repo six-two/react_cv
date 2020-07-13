@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import reducer from './reducer';
-import { TimelineEntry } from '../DataLoader';
+import { TimelineEntry } from '../data/Timeline';
 // import * as C from './constants';
 
 export interface ReduxState {
@@ -12,6 +12,7 @@ export const fallbackState: ReduxState = {
   timelineEntries: [],
   language: "en",
 }
+
 
 let devTools = undefined;
 if ((window as any).__REDUX_DEVTOOLS_EXTENSION__) {

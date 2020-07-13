@@ -1,8 +1,10 @@
 import React from 'react';
 import { setTimelineEntries } from './redux/actions';
-import { loadTimeline } from './DataLoader';
+import { loadTimeline } from './data/Timeline';
+import { loadLabels } from './data/Labels';
 import SimpleTimeline from './SimpleTimeline';
 import LanguageChooser from './LanguageChooser';
+import LocalizedText from './LocalizedText';
 import '../css/main.scss';
 
 // --------------------------- TODOs -------------------------------
@@ -14,21 +16,30 @@ import '../css/main.scss';
 
 const TIMELINE = loadTimeline();
 setTimelineEntries(TIMELINE);
+const LABELS = loadLabels();
 
 
 export default function App() {
   return <div className="app">
-    <h1>CV</h1>
+    <h1>
+      <LocalizedText text={LABELS.headings.cv} />
+    </h1>
     <LanguageChooser />
     <div className="center">Name: Patrick Schlueter</div>
 
-    <h2>Education</h2>
+    <h2>
+      <LocalizedText text={LABELS.headings.edu} />
+    </h2>
     <SimpleTimeline entries={TIMELINE.filter(x => x.type === "edu")} />
 
-    <h2>Work experience</h2>
+    <h2>
+      <LocalizedText text={LABELS.headings.jobs} />
+    </h2>
     <SimpleTimeline entries={TIMELINE.filter(x => x.type === "job")} />
 
-    <h2>Other</h2>
+    <h2>
+      <LocalizedText text={LABELS.headings.other} />
+    </h2>
     <SimpleTimeline entries={TIMELINE.filter(x => x.type === "other")} />
   </div>
 }
