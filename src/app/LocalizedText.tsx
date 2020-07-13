@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
-import { TimelineEntry, LString, getLocalized } from './DataLoader';
+import { LString, getLocalized } from './DataLoader';
 
 
 interface Props {

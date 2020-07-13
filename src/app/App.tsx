@@ -1,6 +1,6 @@
 import React from 'react';
 import { setTimelineEntries } from './redux/actions';
-import { loadTimeline, TimelineEntry, LString, getLocalized } from './DataLoader';
+import { loadTimeline } from './DataLoader';
 import SimpleTimeline from './SimpleTimeline';
 import LanguageChooser from './LanguageChooser';
 import '../css/main.scss';
@@ -9,6 +9,7 @@ import '../css/main.scss';
 // add a takeaway field to everything
 // parse dates
 // translate static content (like headers)
+// make yaml2json.py watch for file changes
 // -----------------------------------------------------------------
 
 const TIMELINE = loadTimeline();

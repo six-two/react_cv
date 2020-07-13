@@ -1,5 +1,5 @@
 import React from 'react';
-import { TimelineEntry, LString, getLocalized } from './DataLoader';
+import { TimelineEntry } from './DataLoader';
 import LocalizedText from './LocalizedText';
 
 
