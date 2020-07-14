@@ -9,9 +9,6 @@ import '../css/main.scss';
 
 // --------------------------- TODOs -------------------------------
 // add a takeaway field to everything
-// parse dates
-// translate static content (like headers)
-// make yaml2json.py watch for file changes
 // -----------------------------------------------------------------
 
 const TIMELINE = loadTimeline();
