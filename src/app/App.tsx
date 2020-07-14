@@ -21,10 +21,13 @@ const LABELS = loadLabels();
 
 export default function App() {
   return <div className="app">
+    <div style={{ margin: "20px" }}>
+      <LanguageChooser />
+    </div>
+
     <h1>
       <LocalizedText text={LABELS.headings.cv} />
     </h1>
-    <LanguageChooser />
     <div className="center">Name: Patrick Schlueter</div>
 
     <h2>

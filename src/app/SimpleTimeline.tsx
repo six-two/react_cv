@@ -1,7 +1,7 @@
 import React from 'react';
 import { TimelineEntry } from './data/Timeline';
 import LocalizedText from './LocalizedText';
-
+import LocalizedDate from './LocalizedDate';
 
 interface Props {
   entries: TimelineEntry[],
@@ -17,7 +17,14 @@ export function renderSimpleTimelineEntry(entry: TimelineEntry) {
   return <div className="timeline-entry" key={entry.id}>
     <div className="date-div">
       <div className="date">
-        <LocalizedText text={entry.date} />
+        <LocalizedDate date={entry.date.start} />
+        {entry.date.end &&
+          <>
+            <br />
+            {"-"}
+            <LocalizedDate date={entry.date.end} />
+          </>
+        }
       </div>
     </div>
     <div className="content-div">
