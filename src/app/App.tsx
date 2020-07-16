@@ -19,38 +19,32 @@ const TIMELINE = loadTimeline();
 setTimelineEntries(TIMELINE);
 const LABELS = loadLabels();
 
-class CustomTooltip extends React.Component {
-  static defaultEvents = (VictoryTooltip as any).defaultEvents
-  render() {
-    const { x, y } = this.props as any;
-    const rotation = `rotate(45 ${x} ${y})`
-    return (
-      <g transform={rotation}>
-        <VictoryTooltip {...this.props} renderInPortal={false} />
-      </g>
-    );
-  }
-}
+// const date = (y: number) => {
+//   const d = new Date();
+//   d.setUTCFullYear(y);
+//   return d.getTime();
+// }
+const date = (y: number) => y;
 
-const EDU = 0;
-const JOB = 1;
+const EDU = 1;
+const JOB = 2;
 const entries = [
   {
     label: "Uni",
-    start: 2016,
-    end: 2019,
+    start: date(2016),
+    end: date(2019),
     type: EDU,
   },
   {
     label: "NZ",
-    start: 2020,
-    end: 2021,
+    start: date(2020),
+    end: date(2021),
     type: EDU,
   },
   {
     label: "Fraunhofer",
-    start: 2017,
-    end: 2018,
+    start: date(2017),
+    end: date(2018),
     type: JOB,
   },
 ]
@@ -67,7 +61,7 @@ const sampleData = entries.map(e => {
 const voronoiData = entries.map(e => {
   return {
     x: e.type,
-    y: (e.start + e.end) / 2,
+    y: e.start + e.end / 2,
   }
 });
 
@@ -81,6 +75,7 @@ export default function App() {
   //   { x: 1, y: 2.5, y0: 3, label: "a" },
   // ];
   const DEBUG_CHARTS = true;
+  const SHOW_VORONOI = false;
   if (DEBUG_CHARTS) {
     return <div>
       <VictoryChart
@@ -90,12 +85,18 @@ export default function App() {
             labelComponent={<VictoryTooltip cornerRadius={0} flyoutStyle={{ fill: "white" }} />}
           />
         }
-        domain={{ x: [0, 2], y: [2016, 2021] }}
+        domain={{ y: [2016, 2021] }}
         horizontal={true}
         height={150}>
-        <VictoryVoronoi
+        <VictoryAxis tickValues={["Edu", "Work"]} />
+        <VictoryAxis
+          dependentAxis={true}
+          tickFormat={(t) => `${t}`}
+        />
+        {SHOW_VORONOI && <VictoryVoronoi
           style={{ data: { stroke: "#c43a31", strokeWidth: 2 } }}
           data={voronoiData} />
+        }
         <VictoryBar
           labelComponent={<VictoryTooltip />}
           style={{ data: { fill: "blue" } }}
