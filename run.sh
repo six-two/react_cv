@@ -7,9 +7,4 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 python3 data/yaml2json.py
 
 # Start the app / do something else
-if [ "$1" == "deploy" ]
-then
-  SKIP_PREFLIGHT_CHECK=true npm run deploy
-else
-  SKIP_PREFLIGHT_CHECK=true npm start
-fi
+SKIP_PREFLIGHT_CHECK=true npm start
