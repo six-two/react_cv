@@ -7,7 +7,7 @@ import LanguageChooser from './LanguageChooser';
 import LocalizedText from './LocalizedText';
 import '../css/main.scss';
 import {
-  VictoryBar, VictoryChart, VictoryTheme, VictoryTooltip, VictoryLine,
+  VictoryBar, VictoryChart, VictoryTooltip,
   VictoryAxis, VictoryVoronoiContainer, VictoryVoronoi
 } from 'victory';
 
