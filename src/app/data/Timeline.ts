@@ -81,6 +81,6 @@ function parseTimelineEntry(e: any): TimelineEntry {
   };
 }
 
-export function loadTimeline() {
+export function loadTimeline(): TimelineEntry[] {
   return timeline_json.map(parseTimelineEntry);
 }

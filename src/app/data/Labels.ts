@@ -3,7 +3,7 @@ import { LString } from '../Localize';
 
 const ERR = "<ERROR: not defined>";
 
-interface LabelTranslations {
+export interface LabelTranslations {
   headings: {
     cv: LString,
     edu: LString,
