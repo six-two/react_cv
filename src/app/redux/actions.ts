@@ -1,6 +1,5 @@
 import * as C from './constants';
-import store from './store';
-import { TimelineEntry } from '../data/Timeline';
+import store, { JsonData } from './store';
 
 
 // dispatch
@@ -9,7 +8,7 @@ const d = store.dispatch;
 // actions
 export interface Action {
   type: string,
-  payload: string | number | boolean | null | TimelineEntry[],
+  payload: string | number | boolean | null | JsonData,
 }
 
 // action creators
@@ -20,9 +19,9 @@ export function setLanguage(value: string) {
   });
 }
 
-export function setTimelineEntries(value: TimelineEntry[]) {
+export function setData(value: JsonData) {
   d({
-    type: C.ACTION_SET_TIMELINE_ENTRIES,
+    type: C.ACTION_SET_DATA,
     payload: value,
   });
 }

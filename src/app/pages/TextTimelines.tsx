@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { JsonData, ReduxState } from '../redux/store';
 import { TimelineEntry } from '../data/Timeline';
 import { LabelTranslations } from '../data/Labels';
 import SimpleTimeline from '../SimpleTimeline';
@@ -40,4 +42,16 @@ const TextTimelines = (props: Props) => {
     </div >
 }
 
-export default TextTimelines;
+const mapStateToProps = (state: ReduxState) => {
+    if (!state.data) {
+        console.warn("ReduxState has no data loaded");
+    }
+    const data = state.data as JsonData;
+    return {
+        labels: data.labels,
+        timeline: data.timeline,
+    }
+};
+
+export const ReduxComponent = connect(mapStateToProps)(TextTimelines);
+export default ReduxComponent;

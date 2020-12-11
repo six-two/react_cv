@@ -1,16 +1,25 @@
 import { createStore } from 'redux';
 import reducer from './reducer';
 import { TimelineEntry } from '../data/Timeline';
-// import * as C from './constants';
+import { LabelTranslations } from '../data/Labels';
+import * as C from './constants';
 
 export interface ReduxState {
+  data?: JsonData,
   timelineEntries: TimelineEntry[],
   language: string,
+  date_accuracy: string,
+}
+
+export interface JsonData {
+  labels: LabelTranslations,
+  timeline: TimelineEntry[],
 }
 
 export const fallbackState: ReduxState = {
   timelineEntries: [],
   language: "en",
+  date_accuracy: C.DATE_ACCURACY_MONTH,
 }
 
 

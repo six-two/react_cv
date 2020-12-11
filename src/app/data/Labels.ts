@@ -13,9 +13,10 @@ export interface LabelTranslations {
 }
 
 export function loadLabels(): LabelTranslations {
-  const h = labels_json.headings
+  let h = labels_json.headings;
   if (!h){
-    throw new Error("JSON file contains so headings: 'labels.json'");
+    console.error("[CRITICAL] JSON file contains no headings: 'labels.json'", labels_json);
+    h = {} as any;
   }
   return {
     headings: {

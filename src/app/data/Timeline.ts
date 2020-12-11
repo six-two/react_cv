@@ -82,5 +82,10 @@ function parseTimelineEntry(e: any): TimelineEntry {
 }
 
 export function loadTimeline(): TimelineEntry[] {
-  return timeline_json.map(parseTimelineEntry);
+  try {
+    return timeline_json.map(parseTimelineEntry);
+  } catch (e) {
+    console.error("[CRITICAL] Failed to load timeline", e);
+    return [];
+  }
 }
