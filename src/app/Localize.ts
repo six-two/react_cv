@@ -13,47 +13,40 @@ export interface LDate {
   day?: number,
 }
 
-function englishDateFormat(date: LDate): string {
-  if (date.isNow) {
-    return "now";
-  } else {
-    let dateString = "" + date.year;
-    if (date.month) {
-      dateString += "-" + date.month;
-      if (date.day) {
-        dateString += "-" + date.day;
-      }
-    }
-    return dateString;
-  }
+const ldate2date = (date: LDate): Date => {
+  const y = date.year;
+  // Just give some default values that are in the middle
+  // That should prevent timezone issues from doing to much damage
+  const m = date.month ? date.month - 1 : 5;//they use 0 based months :(
+  const d = date.day ?? 15;
+  return new Date(Date.UTC(y, m, d, 12, 0, 0));
 }
 
 export function getLocalizedDate(date: LDate, language: string): string {
-  //TODO find library for this, or at least add zero padding
-  switch (language) {
-    case "en":
-      return englishDateFormat(date);
-    case "de": {
-      if (date.isNow) {
+  if (date.isNow) {
+    switch (language) {
+      case "en":
+        return "now";
+      case "de":
         return "heute";
-      } else {
-        let dateString = "" + date.year;
-        if (date.month) {
-          dateString = date.month + "." + dateString;
-          if (date.day) {
-            dateString = date.day + "." + dateString;
-          }
-        }
-        return dateString;
-      }
-    }
-    default:
-      console.error(`[DateFormat] Unknown language: "${language}"`)
-      return englishDateFormat(date);
+      default:
+        console.error(`[DateFormat] Unknown language: "${language}"`)
+        return "now";
 
+    }
+  } else {
+    const options: Intl.DateTimeFormatOptions = {
+      timeZone: 'UTC',
+      year: 'numeric',
+      // only show these values if they are set
+      // since I start counting at 1, any value should be evaluated as true
+      month: date.month ? 'short' : undefined,
+      day: date.day ? 'numeric' : undefined,
+    };
+    const native_date = ldate2date(date);
+    return native_date.toLocaleDateString(language, options);
   }
 }
-
 
 export function getLocalized(lstring: LString, language: string): string {
   if (typeof lstring === "string") {

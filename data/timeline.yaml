@@ -66,3 +66,13 @@
     de: Neuseeland
   d: 2020-02-25 - now
   x: other
+
+- h:
+    en: Test month
+    de: Test monat
+  c:
+    en: New Zealand
+    de: Neuseeland
+  d: 2020-02 - now
+  x: other
+
