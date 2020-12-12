@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
-import { LString, getLocalized } from './Localize';
 
 
 interface LocalizedTextProps {
@@ -10,6 +9,34 @@ interface LocalizedTextProps {
   multiLine?: "text" | "list",
   lang: string,
 }
+
+export interface LocalizedString {
+  en?: string, // english
+  de?: string, // german
+  [key: string]: string | undefined,
+}
+
+export type LString = LocalizedString | string;
+
+export function getLocalizedText(lstring: LString, language: string): string {
+  if (typeof lstring === "string") {
+    return lstring;
+  } else {
+    let local = lstring[language];
+    if (!local) {
+      local = lstring.en; // fall back to the english version
+    }
+
+    if (local) {
+      return local;
+    } else {
+      // Oops, I am screwed
+      console.error(`Can not localize to "${language}": "${JSON.stringify(lstring)}"`)
+      return "<Error with localization>"
+    }
+  }
+}
+
 
 export const MultiLineText = (props: { text: string }) => {
   return <div className="multi-line">
@@ -33,10 +60,10 @@ export const List = (props: { entries: string[] }) => {
   </ul>
 }
 
-const _LocalizedText = (props: LocalizedTextProps) => {
+const LocalizedText = (props: LocalizedTextProps) => {
   let text = props.text || props.defaultText;
   if (text) {
-    text = getLocalized(text, props.lang);
+    text = getLocalizedText(text, props.lang);
     switch (props.multiLine) {
       case undefined:
         return <>{text}</>
@@ -55,5 +82,5 @@ const _LocalizedText = (props: LocalizedTextProps) => {
 const mapStateToProps = (state: ReduxState) => ({
   lang: state.language,
 });
-export const LocalizedText = connect(mapStateToProps)(_LocalizedText);
-export default LocalizedText;
+
+export default connect(mapStateToProps)(LocalizedText);

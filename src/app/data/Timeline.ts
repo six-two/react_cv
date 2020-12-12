@@ -1,5 +1,6 @@
 import timeline_json from './timeline.json';
-import { LString, LDate } from '../Localize';
+import { LString } from '../LocalizedText';
+import { LDate } from '../LocalizedDate';
 
 let idCounter = 0;
 

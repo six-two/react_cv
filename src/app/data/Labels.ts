@@ -1,5 +1,5 @@
 import labels_json from './labels.json';
-import { LString } from '../Localize';
+import { LString } from '../LocalizedText';
 
 const ERR = "<ERROR: not defined>";
 
