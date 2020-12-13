@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
-import LocalizedText, { getLocalizedText } from './LocalizedText';
+import { getLocalizedText } from './LocalizedText';
 import { Place } from './data/Timeline';
+import LinkTextComponent from './LinkTextComponent';
 
 
 interface Props {
@@ -31,22 +32,12 @@ const getPlaceText = (p: Place, lang: string): string => {
 
 const LocationLink = (props: Props) => {
     const text = getPlaceText(props.place, props.lang);
-    if (text) {
-        if (props.place.link) {
-            const linkLocation = getLocalizedText(props.place.link, props.lang).trim();
-            if (linkLocation) {
-                return <>
-                    <span>{props.prefix}</span>
-                    <a href={linkLocation}>
-                        {text}
-                    </a>
-                </>
-            }
-        }
-    return <span>{props.prefix + text}</span>;
-    } else {
-        return null;
-    }
+    return <>
+        {text && props.prefix}
+        <LinkTextComponent
+            text={text}
+            link={props.place.link} />
+    </>
 }
 
 

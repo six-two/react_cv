@@ -3,6 +3,8 @@ import { TimelineEntry } from './data/Timeline';
 import LocalizedText from './LocalizedText';
 import LocalizedDate from './LocalizedDate';
 import LocationLink from './LocationLink';
+import LinkTextComponent from './LinkTextComponent';
+
 
 interface Props {
   entries: TimelineEntry[],
@@ -34,9 +36,11 @@ export function renderSimpleTimelineEntry(entry: TimelineEntry) {
         <LocalizedText text={entry.headline} defaultText="<No title>" />
       </div>
       <div className="company">
-        <LocalizedText text={entry.company} />
+        <LinkTextComponent
+          text={entry.company.text}
+          link={entry.company.link} />
         <LocationLink
-          prefix={entry.company ? ", " : ""}
+          prefix={entry.company.text ? ", " : ""}
           place={entry.place} />
       </div>
       <div className="description">

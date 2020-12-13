@@ -1,7 +1,7 @@
 # Field names are just one letter to make typing them faster (and prevent misspellings)
 # Short name | full name | description
 # h | header | the name / title of the entry
-# c | company | the company / institute where the activity took place
+# c | company | the company / institute where the activity took place. Subfields: [title: "t", link: "l"]
 # p | place | The country (and optionally city where it took place). Subfields: [country: "c", city/town: "t", link: "l"]
 # d | date    | when it took place. Can be a date like "1999-12-31" or a span like "2000-02 - 2008-09". Must contain a year, month and day are optional
 # t | descryption text | A text describing what you did in some detail
@@ -10,8 +10,10 @@
     en: Bachelor in computer engineering
     de: Bachelorstudium Technische Informatik
   c:
-    en: University of Applied Sciences and Arts
-    de: Technische Hochschule Ostwestfalen-Lippe
+    t:
+      en: University of Applied Sciences and Arts
+      de: Technische Hochschule Ostwestfalen-Lippe
+    l: https://www.th-owl.de/
   p: &lemgo
     c:
       en: Germany
@@ -38,8 +40,8 @@
     en: Student job in cyber security
     de: Studentische Hilfskraft in der Abteilung Cybersicherheit
   c:
-    en: Fraunhofer IOSB-INA
-    de: Fraunhofer IOSB-INA
+    t: Fraunhofer IOSB-INA
+    l: https://www.iosb.fraunhofer.de/
   p: *lemgo
   d: 2017-05-16 - 2018-05-15
   x: job
@@ -61,8 +63,10 @@
     en: Abitur (upper secondary school leaving certificate)
     de: Abitur
   c:
-    en: Engelbert-Kaempfer-Gymnasium
-    de: Engelbert-Kaempfer-Gymnasium
+    t:
+      en: Engelbert-Kaempfer-Gymnasium
+      de: Engelbert-Kaempfer-Gymnasium
+    l: https://www.ekg-lemgo.de/
   p: *lemgo
   d: 2008 - 2016
   x: edu

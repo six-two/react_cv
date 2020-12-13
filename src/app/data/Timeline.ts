@@ -4,6 +4,11 @@ import { LDate } from '../LocalizedDate';
 
 let idCounter = 0;
 
+export interface Company {
+  text: LString,
+  link: LString,
+}
+
 export interface Place {
   country: LString,
   town: LString,
@@ -12,7 +17,7 @@ export interface Place {
 
 export interface TimelineEntry {
   headline: LString
-  company: LString,
+  company: Company,
   place: Place,
   date: {
     start: LDate,
@@ -78,11 +83,15 @@ function parseTimelineEntry(e: any): TimelineEntry {
   };
   //TODO verify that startDate < endDate
 
-  let place = e.p || {};
+  const place = e.p || {};
+  const company = e.c || {};
 
   return {
     headline: e.h || "",
-    company: e.c || "",
+    company: {
+      text: company.t || "",
+      link: company.l || "",
+    },
     place: {
       country: place.c || "",
       town: place.t || "",
