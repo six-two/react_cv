@@ -94,8 +94,8 @@
 - h:
     en: Test month
     de: Test monat
-  p:
-    t: Somewhere?
+  c:
+    t: Some company
   d: 2020-02 - now
   x: other
 

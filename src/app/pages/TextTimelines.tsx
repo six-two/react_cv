@@ -15,15 +15,24 @@ interface Props {
 
 const TextTimelines = (props: Props) => {
     const headings = props.labels.headings;
-    return < div className="app" >
-        <div >
+    const email = "cv@six-two.dev";
+    return <div className="app">
+        <div className="lang-choose-box">
+            <div className="text">Select a language</div>
             <LanguageChooser />
         </div>
-
+        
         <h1>
             <LocalizedText text={headings.cv} />
         </h1>
+
         <div className="center">Name: Patrick Schlueter</div>
+        <div className="center">
+            {"Email: "}
+            <a href={`mailto:${email}`}>
+                {email}
+            </a>
+        </div>
 
         <h2>
             <LocalizedText text={headings.edu} />
@@ -39,7 +48,7 @@ const TextTimelines = (props: Props) => {
             <LocalizedText text={headings.other} />
         </h2>
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "other")} />
-    </div >
+    </div>
 }
 
 const mapStateToProps = (state: ReduxState) => {

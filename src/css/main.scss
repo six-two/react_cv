@@ -1,6 +1,8 @@
 $big-screen: "only screen and (min-width: 768px)";
 $medium-screen: "only screen and (min-width: 500px)";
 
+@import "lang_chooser";
+
 #root {
   h1, h2, .center {
     text-align: center;
@@ -9,10 +11,6 @@ $medium-screen: "only screen and (min-width: 500px)";
   .multi-line > p {
     margin: 0px;
   }
-}
-
-.lang-chooser {
-  text-align: center;
 }
 
 .timeline {
