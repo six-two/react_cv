@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function DropdownChooser(props: Props) {
   const onChange = (e: any) => props.onValueChange(e.target.value);
   const options = [...props.optionMap.entries()];

@@ -1,72 +1,24 @@
-$big-screen: "only screen and (min-width: 768px)";
+$big-screen   : "only screen and (min-width: 768px)";
 $medium-screen: "only screen and (min-width: 500px)";
 
 @import "lang_chooser";
+@import "infos";
+@import "timeline";
+
+.page-footer {
+  // Hide the support banner
+  display: none;
+}
 
 #root {
-  h1, h2, .center {
+
+  h1,
+  h2,
+  .center {
     text-align: center;
   }
 
-  .multi-line > p {
+  .multi-line>p {
     margin: 0px;
-  }
-}
-
-.timeline {
-  width: 700px;
-  margin: auto;
-}
-
-.timeline-entry {
-  display: flex;
-  margin: 30px 0px;
-  padding: 10px;
-  background-color: #f4f4f4;
-  border: 1px solid darkgray;
-  border-radius: 10px;
-
-  .date-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    padding-right: 15px;
-    border-right: 1px solid darkgray;
-    margin-right: 15px;
-  }
-
-  .content-div {
-    flex: 1;
-  }
-
-  .headline {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .company {
-    text-align: center;
-    color: #444;
-
-    a {
-      color: #444;
-      // text-decoration: underline;
-    }
-  }
-
-  .date {
-    color: black;
-    text-align: right;
-  }
-
-  .description {
-    font-style: italic;
-    margin-top: 10px;
-
-    & > p {
-      margin: 0px;
-    }
   }
 }

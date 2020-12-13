@@ -11,3 +11,59 @@ headings:
   other:
     en: Other
     de: Anderes
+infos:
+  name:
+    label: Name
+    value:
+      en: Patrick Schlueter
+      de: Patrick Schlüter
+    hidden: false
+  email:
+    label: Email
+    value: cv@six-two.dev
+    hidden: false
+  birthyear:
+    label:
+      en: Year of birth
+      de: Geburtsjahr
+    value: "1998"
+    hidden: true
+  gender:
+    label:
+      en: Gender
+      de: Geschlecht
+    value:
+      en: male
+      de: männlich
+    hidden: true
+  nationality:
+    label:
+      en: Nationality
+      de: Statsangehörigkeit
+    value:
+      en: German
+      de: deutsch
+    hidden: true
+  location:
+    label:
+      en: Current location
+      de: Aktueller Aufenthaltsort
+    value:
+      en: New Zealand
+      de: Neuseeland
+    hidden: false
+  cv:
+    label:
+      en: Current CV
+      de: Aktueller Lebenslauf
+    value: https://cv.six-two.dev
+    hidden: false
+
+misc:
+  hidden_label:
+    en: Reveal
+    de: Anzeigen
+  hidden_tooltip:
+    en: This information is hidden by default, since it may not be required (or maybe even prohibited?) in some countries.
+    de: Diese Information ist standardmäßig versteckt, da sie in einigen Ländern nicht notwendig ist.
+

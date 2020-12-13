@@ -12,6 +12,7 @@ import '../css/main.scss';
 // Failed to compile."""
 
 // --------------------------- TODOs -------------------------------
+// Add language, framework, etc proficiency
 // add a takeaway field to everything
 // -----------------------------------------------------------------
 

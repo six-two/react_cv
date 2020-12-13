@@ -6,6 +6,7 @@ import { LabelTranslations } from '../data/Labels';
 import SimpleTimeline from '../SimpleTimeline';
 import LanguageChooser from '../LanguageChooser';
 import LocalizedText from '../LocalizedText';
+import PersonalInfo from '../PersonalInfo';
 
 
 interface Props {
@@ -15,23 +16,33 @@ interface Props {
 
 const TextTimelines = (props: Props) => {
     const headings = props.labels.headings;
-    const email = "cv@six-two.dev";
     return <div className="app">
         <div className="lang-choose-box">
             <div className="text">Select a language</div>
             <LanguageChooser />
         </div>
-        
+
         <h1>
             <LocalizedText text={headings.cv} />
         </h1>
 
-        <div className="center">Name: Patrick Schlueter</div>
-        <div className="center">
-            {"Email: "}
-            <a href={`mailto:${email}`}>
-                {email}
-            </a>
+        <div className="pi-div">
+            <PersonalInfo
+                info={props.labels.infos.name} />
+            <PersonalInfo
+                info={props.labels.infos.email}
+                is_email={true} />
+            <PersonalInfo
+                info={props.labels.infos.location} />
+            <PersonalInfo
+                info={props.labels.infos.nationality} />
+            <PersonalInfo
+                info={props.labels.infos.gender} />
+            <PersonalInfo
+                info={props.labels.infos.birthyear} />
+            <PersonalInfo
+                info={props.labels.infos.cv}
+                is_url={true} />
         </div>
 
         <h2>
