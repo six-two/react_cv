@@ -4,10 +4,16 @@ import { LDate } from '../LocalizedDate';
 
 let idCounter = 0;
 
+export interface Place {
+  country: LString,
+  town: LString,
+  link: LString,
+}
 
 export interface TimelineEntry {
   headline: LString
   company: LString,
+  place: Place,
   date: {
     start: LDate,
     end: LDate | null,
@@ -72,9 +78,16 @@ function parseTimelineEntry(e: any): TimelineEntry {
   };
   //TODO verify that startDate < endDate
 
+  let place = e.p || {};
+
   return {
     headline: e.h || "",
     company: e.c || "",
+    place: {
+      country: place.c || "",
+      town: place.t || "",
+      link: place.l || "",
+    },
     date: date,
     description: e.t || "",
     type: e.x || "",

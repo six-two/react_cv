@@ -51,10 +51,16 @@ $medium-screen: "only screen and (min-width: 500px)";
   .company {
     text-align: center;
     color: #444;
+
+    a {
+      color: #444;
+      // text-decoration: underline;
+    }
   }
 
   .date {
     color: black;
+    text-align: right;
   }
 
   .description {

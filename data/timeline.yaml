@@ -1,9 +1,25 @@
+# Field names are just one letter to make typing them faster (and prevent misspellings)
+# Short name | full name | description
+# h | header | the name / title of the entry
+# c | company | the company / institute where the activity took place
+# p | place | The country (and optionally city where it took place). Subfields: [country: "c", city/town: "t", link: "l"]
+# d | date    | when it took place. Can be a date like "1999-12-31" or a span like "2000-02 - 2008-09". Must contain a year, month and day are optional
+# t | descryption text | A text describing what you did in some detail
+# x | type | The type of the activity. Known values: Education: "edu", Job: "job", other: "other", Hide this entry: "hide"
 - h:
     en: Bachelor in computer engineering
     de: Bachelorstudium Technische Informatik
   c:
-    en: University of Applied Sciences and Arts, Lemgo (Germany)
-    de: Technische Hochschule Ostwestfalen-Lippe, Lemgo (Deutschland)
+    en: University of Applied Sciences and Arts
+    de: Technische Hochschule Ostwestfalen-Lippe
+  p: &lemgo
+    c:
+      en: Germany
+      de: Deutschland
+    t: Lemgo
+    l:
+      en: https://en.wikipedia.org/wiki/Lemgo
+      de: https://de.wikipedia.org/wiki/Lemgo
   d: 2016-09-01 - 2019-12-01
   x: edu
   t:
@@ -22,8 +38,9 @@
     en: Student job in cyber security
     de: Studentische Hilfskraft in der Abteilung Cybersicherheit
   c:
-    en: Fraunhofer IOSB-INA, Lemgo (Germany)
-    de: Fraunhofer IOSB-INA, Lemgo (Deutschland)
+    en: Fraunhofer IOSB-INA
+    de: Fraunhofer IOSB-INA
+  p: *lemgo
   d: 2017-05-16 - 2018-05-15
   x: job
   t:
@@ -35,9 +52,7 @@
       - Entwurf und Programmierung eines Intrusion Detection Systems in Python (Demonstrator für Hannover Messe)
 
 - h: Factoryhack 2017 (Hackathon)
-  c:
-    en: Lemgo (Germany)
-    de: Lemgo (Deutschland)
+  p: *lemgo
   d: 2017-03-03 - 2017-03-05
   x: other
 
@@ -46,8 +61,9 @@
     en: Abitur (upper secondary school leaving certificate)
     de: Abitur
   c:
-    en: Engelbert-Kaempfer-Gymnasium, Lemgo (Germany)
-    de: Engelbert-Kaempfer-Gymnasium, Lemgo (Deutschland)
+    en: Engelbert-Kaempfer-Gymnasium
+    de: Engelbert-Kaempfer-Gymnasium
+  p: *lemgo
   d: 2008 - 2016
   x: edu
   t:
@@ -61,18 +77,21 @@
 - h:
     en: Gap year
     de: Auslandsjahr
-  c:
-    en: New Zealand
-    de: Neuseeland
+  p:
+    c:
+      en: New Zealand
+      de: Neuseeland
+    l:
+      en: https://en.wikipedia.org/wiki/New_Zealand
+      de: https://de.wikipedia.org/wiki/Neuseeland
   d: 2020-02-25 - now
   x: other
 
 - h:
     en: Test month
     de: Test monat
-  c:
-    en: New Zealand
-    de: Neuseeland
+  p:
+    t: Somewhere?
   d: 2020-02 - now
   x: other
 

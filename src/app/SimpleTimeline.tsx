@@ -2,6 +2,7 @@ import React from 'react';
 import { TimelineEntry } from './data/Timeline';
 import LocalizedText from './LocalizedText';
 import LocalizedDate from './LocalizedDate';
+import LocationLink from './LocationLink';
 
 interface Props {
   entries: TimelineEntry[],
@@ -12,6 +13,7 @@ export function SimpleTimeline(props: Props) {
     {props.entries.map(renderSimpleTimelineEntry)}
   </div>
 }
+
 
 export function renderSimpleTimelineEntry(entry: TimelineEntry) {
   return <div className="timeline-entry" key={entry.id}>
@@ -33,6 +35,9 @@ export function renderSimpleTimelineEntry(entry: TimelineEntry) {
       </div>
       <div className="company">
         <LocalizedText text={entry.company} />
+        <LocationLink
+          prefix={entry.company ? ", " : ""}
+          place={entry.place} />
       </div>
       <div className="description">
         <LocalizedText text={entry.description} multiLine="text" />
