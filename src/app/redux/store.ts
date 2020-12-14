@@ -8,7 +8,7 @@ export interface ReduxState {
   data?: JsonData,
   timelineEntries: TimelineEntry[],
   language: string,
-  date_accuracy: string,
+  date_precision: string,
 }
 
 export interface JsonData {
@@ -19,7 +19,7 @@ export interface JsonData {
 export const fallbackState: ReduxState = {
   timelineEntries: [],
   language: "en",
-  date_accuracy: C.DATE_ACCURACY_MONTH,
+  date_precision: C.DATE_PRECISION_MONTH,
 }
 
 

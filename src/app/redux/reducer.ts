@@ -12,8 +12,10 @@ export default function reducer(state: ReduxState | undefined, action: Action): 
   switch (action.type) {
     case C.ACTION_SET_LANGUAGE:
       return setLanguage(state, action.payload as string);
+    case C.ACTION_SET_DATE_PRECISION:
+      return setDatePrecision(state, action.payload as string);
     case C.ACTION_SET_DATA:
-      return setData(state, action.payload as JsonData)
+      return setData(state, action.payload as JsonData);
     case "@@INIT":
       return state;
     default:
@@ -26,6 +28,13 @@ const setLanguage = (state: ReduxState, value: string) => {
   return {
     ...state,
     language: value,
+  }
+}
+
+const setDatePrecision = (state: ReduxState, value: string) => {
+  return {
+    ...state,
+    date_precision: value,
   }
 }
 

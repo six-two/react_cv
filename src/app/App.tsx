@@ -1,6 +1,6 @@
 import React from 'react';
 import DataLoader from './DataLoader';
-import LanguageChooser from './LanguageChooser';
+import Settings from './Settings';
 import GraphExperiment from './pages/GraphExperiment';
 import TextCV from './pages/TextTimelines';
 import '../css/main.scss';
@@ -22,10 +22,7 @@ const DEBUG_CHARTS = false;
 
 export default function App() {
   return <div className="app">
-    <div className="lang-choose-box no-print">
-      <div className="text">Select a language</div>
-      <LanguageChooser />
-    </div>
+    <Settings />
 
     <DataLoader>
       {DEBUG_CHARTS ? <GraphExperiment /> : <TextCV />}

@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
+import * as C from './redux/constants';
+
 
 export interface LDate {
   isNow: boolean,
@@ -10,10 +12,11 @@ export interface LDate {
 
 interface Props {
   date: LDate,
+  precision: string,
   lang: string,
 }
 
-export function getLocalizedDate(date: LDate, language: string): string {
+export function getLocalizedDate(date: LDate, language: string, precision: string): string {
   if (date.isNow) {
     switch (language) {
       case "en":
@@ -23,16 +26,26 @@ export function getLocalizedDate(date: LDate, language: string): string {
       default:
         console.error(`[DateFormat] Unknown language: "${language}"`)
         return "now";
-
     }
   } else {
+    // only show the fields if they are set
+    let show_day = Boolean(date.day);
+    let show_month = Boolean(date.month);
+
+    // hide some fields, depending on the precision choosen
+    if (precision === C.DATE_PRECISION_YEAR) {
+      show_day = show_month = false;
+    } else if (precision === C.DATE_PRECISION_MONTH) {
+      show_day = false;
+    }
+
     const options: Intl.DateTimeFormatOptions = {
       timeZone: 'UTC',
       year: 'numeric',
       // only show these values if they are set
       // since I start counting at 1, any value should be evaluated as true
-      month: date.month ? 'short' : undefined,
-      day: date.day ? 'numeric' : undefined,
+      month: show_month ? 'short' : undefined,
+      day: show_day ? 'numeric' : undefined,
     };
 
     const y = date.year;
@@ -47,11 +60,12 @@ export function getLocalizedDate(date: LDate, language: string): string {
 
 const LocalizedDate = (props: Props) => {
   return <>
-    {getLocalizedDate(props.date, props.lang)}
+    {getLocalizedDate(props.date, props.lang, props.precision)}
   </>
 }
 
 const mapStateToProps = (state: ReduxState) => ({
+  precision: state.date_precision,
   lang: state.language,
 });
 export default connect(mapStateToProps)(LocalizedDate);

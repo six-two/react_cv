@@ -1,4 +1,7 @@
 headings:
+  settings:
+    en: Settings
+    de: Einstellungen
   cv:
     en: CV
     de: Lebenslauf
@@ -11,6 +14,20 @@ headings:
   other:
     en: Other
     de: Anderes
+settings:
+  date_precision:
+    label:
+      en: Date precision
+      de: Genauigkeit der Zeitangaben
+    day:
+      en: day
+      de: Tag
+    month:
+      en: month
+      de: Monat
+    year:
+      en: year
+      de: Jahr
 infos:
   name:
     label: Name

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
 import { setLanguage } from './redux/actions';
-import Dropdown from './Dropdown';
+import Dropdown from './LocalizedDropdown';
 
 const LANGUAGES = new Map<string, string>();
 LANGUAGES.set("en", "🇺🇸 English");

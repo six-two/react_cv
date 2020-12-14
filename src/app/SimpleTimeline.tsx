@@ -1,7 +1,7 @@
 import React from 'react';
 import { TimelineEntry } from './data/Timeline';
 import LocalizedText from './LocalizedText';
-import LocalizedDate from './LocalizedDate';
+import LocalizedTimeSpan from './LocalizedTimeSpan';
 import LocationLink from './LocationLink';
 import LinkTextComponent from './LinkTextComponent';
 
@@ -20,16 +20,10 @@ export function SimpleTimeline(props: Props) {
 export function renderSimpleTimelineEntry(entry: TimelineEntry) {
   return <div className="timeline-entry" key={entry.id}>
     <div className="date-div">
-      <div className="date">
-        <LocalizedDate date={entry.date.start} />
-        {entry.date.end &&
-          <>
-            <br />
-            {"-"}
-            <LocalizedDate date={entry.date.end} />
-          </>
-        }
-      </div>
+      <LocalizedTimeSpan
+        start={entry.date.start}
+        end={entry.date.end}
+        multiline={true} />
     </div>
     <div className="content-div">
       <div className="headline">

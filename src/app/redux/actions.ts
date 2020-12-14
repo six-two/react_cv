@@ -19,6 +19,13 @@ export function setLanguage(value: string) {
   });
 }
 
+export function setDatePrecision(value: string) {
+  d({
+    type: C.ACTION_SET_DATE_PRECISION,
+    payload: value,
+  });
+}
+
 export function setData(value: JsonData) {
   d({
     type: C.ACTION_SET_DATA,
