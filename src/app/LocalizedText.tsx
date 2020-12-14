@@ -66,7 +66,7 @@ const LocalizedText = (props: LocalizedTextProps) => {
     text = getLocalizedText(text, props.lang);
     switch (props.multiLine) {
       case undefined:
-        return <>{text}</>
+        return <span>{text}</span>
       case "text":
         return <MultiLineText text={text} />
       case "list":

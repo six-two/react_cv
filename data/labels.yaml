@@ -15,6 +15,12 @@ headings:
     en: Other
     de: Anderes
 settings:
+  label_hide:
+    en: Hide settings
+    de: Einstellungen verstecken
+  label_show:
+    en: Show settings
+    de: Einstellungen anzeigen
   date_precision:
     label:
       en: Date precision

@@ -6,14 +6,6 @@
         border-radius: 10px;
         border       : 1px solid gray;
 
-        .pi-row {
-            display: table-row;
-
-            &:nth-child(even) {
-                background-color: #eee;
-            }
-        }
-
         .pi-label,
         .pi-value {
             display: table-cell;

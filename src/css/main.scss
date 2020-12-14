@@ -2,7 +2,7 @@ $big-screen   : "only screen and (min-width: 768px)";
 $medium-screen: "only screen and (min-width: 500px)";
 
 @import "button";
-@import "lang_chooser";
+@import "settings";
 @import "infos";
 @import "timeline";
 
@@ -13,6 +13,7 @@ $medium-screen: "only screen and (min-width: 500px)";
 
 // Hide some elements when printing
 @media print {
+
   .page-header,
   .no-print {
     display: none;
@@ -20,6 +21,7 @@ $medium-screen: "only screen and (min-width: 500px)";
 }
 
 #root {
+
   h1,
   h2,
   .center {
@@ -28,5 +30,21 @@ $medium-screen: "only screen and (min-width: 500px)";
 
   .multi-line>p {
     margin: 0px;
+  }
+
+  .table {
+    display: table;
+  }
+
+  .row {
+    display: table-row;
+
+    &:nth-child(even) {
+      background-color: #eee;
+    }
+  }
+
+  .cell {
+    display: table-cell;
   }
 }

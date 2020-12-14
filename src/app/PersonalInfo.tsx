@@ -51,7 +51,7 @@ const PersonalInfoLabel = (props: Props) => {
         </HiddenInfo>
     }
 
-    return <div className="pi-row">
+    return <div className="row">
         <div className="pi-label">
             {getLocalizedText(props.info.label, props.lang)}
         </div>

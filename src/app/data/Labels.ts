@@ -18,6 +18,8 @@ export interface Headings {
 }
 
 export interface Settings {
+  label_hide: LString,
+  label_show: LString,
   date_precision: {
     label: LString,
     day: LString,
@@ -88,6 +90,8 @@ const loadSettings = (): Settings => {
   const s = getJsonDict("settings");
   const dp = s.date_precision || {};
   return {
+    label_hide: check(s.label_hide),
+    label_show: check(s.label_show),
     date_precision: {
       label: check(dp.label),
       day: check(dp.day),
