@@ -4,7 +4,6 @@ import { JsonData, ReduxState } from '../redux/store';
 import { TimelineEntry } from '../data/Timeline';
 import { LabelTranslations } from '../data/Labels';
 import SimpleTimeline from '../SimpleTimeline';
-import LanguageChooser from '../LanguageChooser';
 import LocalizedText from '../LocalizedText';
 import PersonalInfo from '../PersonalInfo';
 
@@ -16,12 +15,7 @@ interface Props {
 
 const TextTimelines = (props: Props) => {
     const headings = props.labels.headings;
-    return <div className="app">
-        <div className="lang-choose-box">
-            <div className="text">Select a language</div>
-            <LanguageChooser />
-        </div>
-
+    return <div>
         <h1>
             <LocalizedText text={headings.cv} />
         </h1>

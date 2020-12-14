@@ -10,8 +10,15 @@ $medium-screen: "only screen and (min-width: 500px)";
   display: none;
 }
 
-#root {
+// Hide some elements when printing
+@media print {
+  .page-header,
+  .no-print {
+    display: none;
+  }
+}
 
+#root {
   h1,
   h2,
   .center {
