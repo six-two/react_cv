@@ -1,6 +1,7 @@
 import React from 'react';
 import DataLoader from './DataLoader';
 import Settings from './Settings';
+import UrlHashManager from './UrlHashManager';
 import GraphExperiment from './pages/GraphExperiment';
 import TextCV from './pages/TextTimelines';
 import '../css/main.scss';
@@ -27,5 +28,7 @@ export default function App() {
     <DataLoader>
       {DEBUG_CHARTS ? <GraphExperiment /> : <TextCV />}
     </DataLoader>
+
+    <UrlHashManager />
   </div>
 }

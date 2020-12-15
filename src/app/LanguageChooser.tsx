@@ -13,11 +13,6 @@ interface Props {
   language: string,
 }
 
-const mapStateToProps = (state: ReduxState) => ({
-  language: state.language,
-});
-
-
 function LanguageChooser(props: Props) {
   return <div className="lang-chooser">
     <Dropdown
@@ -26,5 +21,9 @@ function LanguageChooser(props: Props) {
       onValueChange={setLanguage} />
   </div>
 }
+
+const mapStateToProps = (state: ReduxState) => ({
+  language: state.language,
+});
 
 export default connect(mapStateToProps)(LanguageChooser);

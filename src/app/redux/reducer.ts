@@ -10,6 +10,11 @@ export default function reducer(state: ReduxState | undefined, action: Action): 
   }
 
   switch (action.type) {
+    case C.ACTION_BATCH:
+      for (const batch_action of action.payload as Action[]) {
+        state = reducer(state, batch_action);
+      }
+      return state;
     case C.ACTION_SET_LANGUAGE:
       return setLanguage(state, action.payload as string);
     case C.ACTION_SET_DATE_PRECISION:
