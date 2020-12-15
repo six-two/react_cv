@@ -8,6 +8,7 @@
         background-color: lightgray;
         width           : $sidebar-width;
         height          : 100%;
+        overflow-y      : auto;
 
         .heading {
             font-weight  : bold;
@@ -17,6 +18,11 @@
             &:not(.first) {
                 margin-top: 10px;
             }
+        }
+
+        ul {
+            margin      : 0px;
+            padding-left: 20px;
         }
     }
 }

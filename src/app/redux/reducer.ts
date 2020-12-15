@@ -1,6 +1,7 @@
 import { Action } from './actions';
 import * as C from './constants';
 import { ReduxState, fallbackState, JsonData } from './store';
+import { getLocalizedText } from '../LocalizedText';
 
 
 export default function reducer(state: ReduxState | undefined, action: Action): ReduxState {
@@ -16,17 +17,27 @@ export default function reducer(state: ReduxState | undefined, action: Action): 
       }
       return state;
     case C.ACTION_SET_LANGUAGE:
-      return setLanguage(state, action.payload as string);
+      state = setLanguage(state, action.payload as string);
+      return updateWindowTitle(state);
     case C.ACTION_SET_DATE_PRECISION:
       return setDatePrecision(state, action.payload as string);
     case C.ACTION_SET_DATA:
       return setData(state, action.payload as JsonData);
     case "@@INIT":
-      return state;
+      return updateWindowTitle(state);
     default:
       console.warn(`Unknown action type: "${action.type}"`);
       return state;
   }
+}
+
+const updateWindowTitle = (state: ReduxState): ReduxState => {
+  const ltitle = state.data?.labels.headings.cv;
+  if (ltitle) {
+    const title = getLocalizedText(ltitle, state.language);
+    window.document.title = title;
+  }
+  return state;
 }
 
 const setLanguage = (state: ReduxState, value: string) => {
