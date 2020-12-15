@@ -2,6 +2,9 @@ headings:
   settings:
     en: Settings
     de: Einstellungen
+  toc:
+    en: Table of contents
+    de: Inhaltsverzeichnis
   cv:
     en: CV
     de: Lebenslauf

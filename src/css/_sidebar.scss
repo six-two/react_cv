@@ -1,0 +1,22 @@
+#root {
+    .sidebar {
+        position        : fixed;
+        top             : 0px;
+        left            : 0px;
+        box-sizing      : border-box;
+        padding         : 10px;
+        background-color: lightgray;
+        width           : $sidebar-width;
+        height          : 100%;
+
+        .heading {
+            font-weight  : bold;
+            font-size    : 15px;
+            margin-bottom: 5px;
+
+            &:not(.first) {
+                margin-top: 10px;
+            }
+        }
+    }
+}

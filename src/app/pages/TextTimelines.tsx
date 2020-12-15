@@ -16,7 +16,7 @@ interface Props {
 const TextTimelines = (props: Props) => {
     const headings = props.labels.headings;
     return <div>
-        <h1>
+        <h1 id="cv">
             <LocalizedText text={headings.cv} />
         </h1>
 
@@ -39,17 +39,17 @@ const TextTimelines = (props: Props) => {
                 is_url={true} />
         </div>
 
-        <h2>
+        <h2 id="education">
             <LocalizedText text={headings.edu} />
         </h2>
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "edu")} />
 
-        <h2>
+        <h2 id="jobs">
             <LocalizedText text={headings.jobs} />
         </h2>
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "job")} />
 
-        <h2>
+        <h2 id="other">
             <LocalizedText text={headings.other} />
         </h2>
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "other")} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import DataLoader from './DataLoader';
-import Settings from './Settings';
+import Sidebar from './Sidebar';
 import UrlHashManager from './UrlHashManager';
 import GraphExperiment from './pages/GraphExperiment';
 import TextCV from './pages/TextTimelines';
@@ -16,6 +16,10 @@ import '../css/main.scss';
 // --------------------------- TODOs -------------------------------
 // Add language, framework, etc proficiency
 // add a takeaway field to everything
+// sidebar with headings like in pdf docs
+// maybe use hash for location in document and use query for language?
+// Remove the useless template
+// Fix it for mobile
 // -----------------------------------------------------------------
 
 const DEBUG_CHARTS = false;
@@ -23,12 +27,14 @@ const DEBUG_CHARTS = false;
 
 export default function App() {
   return <div className="app">
-    <Settings />
+    <Sidebar />
 
-    <DataLoader>
-      {DEBUG_CHARTS ? <GraphExperiment /> : <TextCV />}
-    </DataLoader>
+    <div className="main">
+      <DataLoader>
+        {DEBUG_CHARTS ? <GraphExperiment /> : <TextCV />}
+      </DataLoader>
 
-    <UrlHashManager />
+      <UrlHashManager />
+    </div>
   </div>
 }

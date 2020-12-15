@@ -1,26 +1,23 @@
 $big-screen   : "only screen and (min-width: 768px)";
 $medium-screen: "only screen and (min-width: 500px)";
+$sidebar-width: 200px;
+$lgray        : #f4f4f4;
 
 @import "button";
-@import "settings";
 @import "infos";
 @import "timeline";
+@import "sidebar";
 
+.page-header,
 .page-footer {
   // Hide the support banner
   display: none;
 }
 
-// Hide some elements when printing
-@media print {
-
-  .page-header,
-  .no-print {
-    display: none;
-  }
-}
-
 #root {
+  .main {
+    padding-left: $sidebar-width;
+  }
 
   h1,
   h2,
@@ -40,7 +37,7 @@ $medium-screen: "only screen and (min-width: 500px)";
     display: table-row;
 
     &:nth-child(even) {
-      background-color: #eee;
+      background-color: $lgray;
     }
   }
 
@@ -48,3 +45,5 @@ $medium-screen: "only screen and (min-width: 500px)";
     display: table-cell;
   }
 }
+
+@import "print";

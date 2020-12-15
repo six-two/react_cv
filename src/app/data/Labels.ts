@@ -11,6 +11,7 @@ export interface PersonalInfo {
 
 export interface Headings {
   settings: LString,
+  toc: LString,
   cv: LString,
   edu: LString,
   jobs: LString,
@@ -79,6 +80,7 @@ const loadHeadings = (): Headings => {
   const h = getJsonDict("headings");
   return {
     settings: check(h.settings),
+    toc: check(h.toc),
     cv: check(h.cv),
     edu: check(h.edu),
     jobs: check(h.jobs),
