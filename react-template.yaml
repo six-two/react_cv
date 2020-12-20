@@ -1,9 +1,0 @@
-title: CV
-description: My CV
-menu:
-  - title: Contact me
-    url: "https://six-two.dev/#contact"
-  - title: Source code
-    url: "https://github.com/six-two/react_cv"
-  - title: My other projects
-    url: "https://projects.six-two.dev/"

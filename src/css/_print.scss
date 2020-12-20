@@ -1,6 +1,5 @@
 // Hide some elements when printing
 @media print {
-    .page-header,
     .no-print {
         display: none;
     }
