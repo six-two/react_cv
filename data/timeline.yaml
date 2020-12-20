@@ -9,7 +9,7 @@
 - h:
     en: Bachelor in computer engineering
     de: Bachelorstudium Technische Informatik
-  c:
+  c: &thowl
     t:
       en: University of Applied Sciences and Arts
       de: Technische Hochschule Ostwestfalen-Lippe
@@ -39,7 +39,7 @@
 - h:
     en: Student job in cyber security
     de: Studentische Hilfskraft in der Abteilung Cybersicherheit
-  c:
+  c: &fraunhofer
     t: Fraunhofer IOSB-INA
     l: https://www.iosb.fraunhofer.de/
   p: *lemgo
@@ -92,10 +92,38 @@
   x: other
 
 - h:
-    en: Test month
-    de: Test monat
-  c:
-    t: Some company
-  d: 2020-02 - now
-  x: other
+    en: Tutor for preliminary course in mathematics
+    de: Tutor für Mathematik-Vorkurs
+  p: *lemgo
+  c: *thowl
+  d: 2018-09-17 - 2018-09-28
+  x: job
 
+- h:
+    en: Internship
+    de: Praktikum
+  p: *lemgo
+  c: *fraunhofer
+  d: 2017-02-27 - 2017-03-17
+  x: job
+  t:
+    en: TODO, see "de"
+    de: |-
+      TODO
+      Data science, R, Principal component analysis
+
+- h:
+    en: Internship
+    de: Vorpraktikum
+  p: *lemgo
+  c: *fraunhofer
+  d: 2016-07-25 - 2016-08-26
+  x: job
+  t:
+    en: TODO, see "de"
+    de: |-
+      TODO
+      - Kolloborativen Roboter programmiert
+      - Elektronikschaltungsdesign und Lötarbeiten
+      - Profinet Feldgeräte
+      - Programierung eines Rhaspberry Pi mit IEC-61131 (Structured Text) 
