@@ -39,6 +39,13 @@ export interface PersonalInfos {
   cv: PersonalInfo,
 }
 
+export interface Footer {
+  coded: LString,
+  by: LString,
+  author: LString,
+  date: LString,
+}
+
 export interface LabelTranslations {
   headings: Headings,
   settings: Settings,
@@ -47,6 +54,7 @@ export interface LabelTranslations {
     hidden_label: LString,
     // hidden_tooltip: LString,
   },
+  footer: Footer,
 }
 
 const getJsonDict = (category: string): any => {
@@ -99,7 +107,7 @@ const loadSettings = (): Settings => {
       day: check(dp.day),
       month: check(dp.month),
       year: check(dp.year),
-    }
+    },
   }
 }
 
@@ -116,6 +124,16 @@ const loadInfos = (): PersonalInfos => {
   };
 }
 
+const loadFooter = (): Footer => {
+  const f = getJsonDict("footer");
+  return {
+    coded: check(f.coded),
+    by: check(f.by),
+    author: check(f.author),
+    date: check(f.date),
+  };
+}
+
 export function loadLabels(): LabelTranslations {
   const m = getJsonDict("misc");
   return {
@@ -126,5 +144,6 @@ export function loadLabels(): LabelTranslations {
       hidden_label: m.hidden_label || ERR,
       // hidden_tooltip: m.hidden_tooltip || ERR,
     },
+    footer: loadFooter(),
   }
 }
