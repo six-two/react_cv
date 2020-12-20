@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
 import { setLanguage, setDatePrecision, startBatch, endBatch } from './redux/actions';
@@ -16,20 +16,23 @@ interface Props {
 const VALID_LANGUAGES = ["en", "de"];
 const VALID_DATE_PRECISIONS = [C.DATE_PRECISION_DAY, C.DATE_PRECISION_MONTH, C.DATE_PRECISION_YEAR];
 
-const createHash = (settings: Settings) => {
+const redux2url = (settings: Settings) => {
     const params = new URLSearchParams();
     for (const [key, value] of Object.entries(settings)) {
         params.set(key, value);
     }
-    return "#" + params.toString();
+
+    // Replace the params of the current url without causing a reload
+    const new_url = new URL(window.location.href);
+    new_url.search = params.toString();
+    window.history.replaceState(null, "", new_url.href);
 }
 
 const updateField = (current: string,
     params: URLSearchParams,
     param_name: string,
     allowed_values: string[],
-    setter: (str: string) => void,
-    ignore_errors: boolean) => {
+    setter: (str: string) => void) => {
 
     const param = params.get(param_name);
     if (param && param !== current) {
@@ -38,27 +41,23 @@ const updateField = (current: string,
             setter(param);
         } else {
             const error_message = `Url parameter "${param_name}" has invalid value "${param}".\nAllowed values are: ${allowed_values.join(", ")}`
-            console.log(error_message);
-            if (!ignore_errors) {
-                alert(error_message);
-            }
+            console.warn(error_message);
         }
     }
 }
 
-const updateAllFields = (settings: Settings, ignore_errors: boolean = false) => {
-    let queryString = window.location.hash;
+const url2redux = (settings: Settings) => {
+    let queryString = window.location.search;
     if (queryString) {
-        console.log(`Updating fields from URL: ${queryString}`);
-        console.debug(settings);
+        console.log(`Read url parameters: ${queryString}\nOld settings were`, settings);
         try {
             startBatch();
 
             const params = new URLSearchParams(queryString.substr(1));
             updateField(settings.lang, params, "lang",
-                VALID_LANGUAGES, setLanguage, ignore_errors);
+                VALID_LANGUAGES, setLanguage);
             updateField(settings.date, params, "date",
-                VALID_DATE_PRECISIONS, setDatePrecision, ignore_errors);
+                VALID_DATE_PRECISIONS, setDatePrecision);
         } catch (e) {
             console.error("Error while updating fileds from URL", e)
         } finally {
@@ -68,23 +67,16 @@ const updateAllFields = (settings: Settings, ignore_errors: boolean = false) => 
 }
 
 const UrlHashManager = (props: Props) => {
-    // Update all fields from url, when first created
-    useEffect(() => {
-        console.log("Initial reading of URL variables");
-        updateAllFields(props.settings, true);
-    });
+    const [first_render, set_first_render] = useState(true);
 
-    // First update the event listener
-    window.onhashchange = () => {
-        console.log("Hash changed");
-        updateAllFields(props.settings);
-    };
+    if (first_render) {
+        url2redux(props.settings);
 
-    console.log("Setting hash");
-    // Then update the hash
-    window.location.hash = createHash(props.settings);
-    // Order is important, otherwise it causes extra actions for my redux reducer
-
+        set_first_render(false);
+    } else {
+        console.info("Writing url parameters:", props.settings);
+        redux2url(props.settings)
+    }
     return null;
 }
 

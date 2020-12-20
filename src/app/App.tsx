@@ -15,10 +15,7 @@ import '../css/main.scss';
 
 // --------------------------- TODOs -------------------------------
 // Add language, framework, etc proficiency
-// add a takeaway field to everything
-// sidebar with headings like in pdf docs
-// maybe use hash for location in document and use query for language?
-// Remove the useless template
+// Add link to my website and source code
 // Fix it for mobile
 // -----------------------------------------------------------------
 
