@@ -10,7 +10,6 @@ export interface PersonalInfo {
 }
 
 export interface Headings {
-  settings: LString,
   toc: LString,
   cv: LString,
   edu: LString,
@@ -19,8 +18,6 @@ export interface Headings {
 }
 
 export interface Settings {
-  label_hide: LString,
-  label_show: LString,
   date_precision: {
     label: LString,
     day: LString,
@@ -45,7 +42,6 @@ export interface LabelTranslations {
   infos: PersonalInfos,
   misc: {
     hidden_label: LString,
-    // hidden_tooltip: LString,
   },
 }
 
@@ -79,7 +75,6 @@ const check = (e: any) => {
 const loadHeadings = (): Headings => {
   const h = getJsonDict("headings");
   return {
-    settings: check(h.settings),
     toc: check(h.toc),
     cv: check(h.cv),
     edu: check(h.edu),
@@ -92,8 +87,6 @@ const loadSettings = (): Settings => {
   const s = getJsonDict("settings");
   const dp = s.date_precision || {};
   return {
-    label_hide: check(s.label_hide),
-    label_show: check(s.label_show),
     date_precision: {
       label: check(dp.label),
       day: check(dp.day),
@@ -124,7 +117,6 @@ export function loadLabels(): LabelTranslations {
     infos: loadInfos(),
     misc: {
       hidden_label: m.hidden_label || ERR,
-      // hidden_tooltip: m.hidden_tooltip || ERR,
     },
   }
 }

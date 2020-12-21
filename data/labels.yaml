@@ -1,7 +1,4 @@
 headings:
-  settings:
-    en: Settings
-    de: Einstellungen
   toc:
     en: Table of contents
     de: Inhaltsverzeichnis
@@ -18,12 +15,6 @@ headings:
     en: Other
     de: Anderes
 settings:
-  label_hide:
-    en: Hide settings
-    de: Einstellungen verstecken
-  label_show:
-    en: Show settings
-    de: Einstellungen anzeigen
   date_precision:
     label:
       en: Date precision
@@ -89,7 +80,4 @@ misc:
   hidden_label:
     en: Reveal
     de: Anzeigen
-  hidden_tooltip:
-    en: This information is hidden by default, since it may not be required (or maybe even prohibited?) in some countries.
-    de: Diese Information ist standardmäßig versteckt, da sie in einigen Ländern nicht notwendig ist.
 

@@ -16,7 +16,7 @@ import '../css/main.scss';
 // --------------------------- TODOs -------------------------------
 // Add language, framework, etc proficiency
 // Add link to my website and source code
-// Fix it for mobile
+// Make it more mobile friendly?
 // -----------------------------------------------------------------
 
 const DEBUG_CHARTS = false;
