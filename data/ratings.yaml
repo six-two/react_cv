@@ -11,3 +11,21 @@ prog_lang:
       rating: 3
     - label: JavaScript/TypeScript
       rating: 4
+
+languages:
+  heading:
+    en: Languages
+    de: Sprachen
+  ratings:
+    - label:
+        en: German
+        de: Deutsch
+      rating: 5
+    - label:
+        en: English
+        de: Englisch
+      rating: 4
+    - label:
+        en: Spanish
+        de: Spanisch
+      rating: 1

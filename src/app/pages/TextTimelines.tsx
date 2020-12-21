@@ -61,8 +61,9 @@ const TextTimelines = (props: Props) => {
             <LocalizedText text={headings.it_skills} />
         </h2>
         <Ratings
-            heading={rating_data.prog_lang.heading}
-            ratings={rating_data.prog_lang.ratings} />
+            data={rating_data.prog_lang} />
+        <Ratings
+            data={rating_data.languages} />
     </div>
 }
 

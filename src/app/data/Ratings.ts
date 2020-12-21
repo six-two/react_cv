@@ -4,6 +4,7 @@ import { check } from './Labels';
 
 export interface RatingData {
     prog_lang: RatingTable,
+    languages: RatingTable,
 }
 
 export interface RatingTable {
@@ -34,5 +35,6 @@ const parseRatingTable = (json: any): RatingTable => {
 export const loadRatingData = (): RatingData => {
     return {
         prog_lang: parseRatingTable(ratings_json.prog_lang),
+        languages: parseRatingTable(ratings_json.languages),
     }
 }

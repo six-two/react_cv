@@ -1,21 +1,16 @@
-import LocalizedText, { LString } from "./LocalizedText"
+import { RatingRow, RatingTable } from "./data/Ratings";
+import LocalizedText from "./LocalizedText"
 import Rating from "./Rating"
 
 interface Props {
-    heading: LString,
-    ratings: RatingInfo[],
+    data: RatingTable,
 }
 
-interface RatingInfo {
-    label: LString,
-    rating: number,
-}
-
-const compareRatings = (a: RatingInfo, b: RatingInfo): number => {
+const compareRatings = (a: RatingRow, b: RatingRow): number => {
     return b.rating - a.rating;
 }
 
-const Row = (props: RatingInfo) => {
+const Row = (props: RatingRow) => {
     return <div className="row-style">
         <div className="text">
             <LocalizedText text={props.label} />
@@ -26,12 +21,12 @@ const Row = (props: RatingInfo) => {
 
 const RatingsTable = (props: Props) => {
     // Clone, then sort best to worst rating
-    const ratings = [...props.ratings];
+    const ratings = [...props.data.ratings];
     ratings.sort(compareRatings);
 
     return <div className="ratings">
         <h3>
-            <LocalizedText text={props.heading} />
+            <LocalizedText text={props.data.heading} />
         </h3>
 
         <div className="table-style">
