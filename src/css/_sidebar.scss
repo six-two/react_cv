@@ -1,14 +1,14 @@
 #root {
     .sidebar {
-        position        : fixed;
-        top             : 0px;
-        left            : 0px;
+        // For small screens put the sidebar to the top of the page
         box-sizing      : border-box;
         padding         : 10px;
         background-color: lightgray;
-        width           : $sidebar-width;
-        height          : 100%;
-        overflow-y      : auto;
+
+        .content {
+            width : $sidebar-width;
+            margin: auto;
+        }
 
         .heading {
             font-weight  : bold;
@@ -23,6 +23,26 @@
         ul {
             margin      : 0px;
             padding-left: 20px;
+        }
+    }
+
+    @media only screen and (min-width: $cv-width + $sidebar-width) {
+        // For screens that are big enough put it to the side
+        .sidebar {
+            position  : fixed;
+            top       : 0px;
+            left      : 0px;
+            width     : $sidebar-width;
+            height    : 100%;
+            overflow-y: auto;
+
+            .content {
+                margin: 0px;
+            }
+        }
+
+        .main {
+            padding-left: $sidebar-width;
         }
     }
 }

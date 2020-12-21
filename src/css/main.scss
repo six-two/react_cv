@@ -1,5 +1,4 @@
-$big-screen   : "only screen and (min-width: 768px)";
-$medium-screen: "only screen and (min-width: 500px)";
+$cv-width     : 700px;
 $sidebar-width: 200px;
 $lgray        : #f4f4f4;
 
@@ -10,9 +9,6 @@ $lgray        : #f4f4f4;
 
 
 #root {
-  .main {
-    padding-left: $sidebar-width;
-  }
 
   h1,
   h2,

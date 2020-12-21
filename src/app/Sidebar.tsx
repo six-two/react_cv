@@ -26,25 +26,27 @@ const Entry = (props: EntryProps) => {
 const Sidebar = (props: Props) => {
     const headings = props.labels?.headings;
     return <div className="sidebar no-print">
-        <div className="heading first">Language</div>
-        <LanguageChooser />
-        {props.labels && headings &&
-            <>
-                <div className="heading">
-                    <LocalizedText text={props.labels.settings.date_precision.label} />
-                </div>
-                <DatePrecisionChooser />
-                <div className="heading">
-                    <LocalizedText text={headings.toc} />
-                </div>
-                <ul>
-                    <Entry title={headings.cv} id="cv" />
-                    <Entry title={headings.edu} id="education" />
-                    <Entry title={headings.jobs} id="jobs" />
-                    <Entry title={headings.other} id="other" />
-                </ul>
-            </>
-        }
+        <div className="content">
+            <div className="heading first">Language</div>
+            <LanguageChooser />
+            {props.labels && headings &&
+                <>
+                    <div className="heading">
+                        <LocalizedText text={props.labels.settings.date_precision.label} />
+                    </div>
+                    <DatePrecisionChooser />
+                    <div className="heading">
+                        <LocalizedText text={headings.toc} />
+                    </div>
+                    <ul>
+                        <Entry title={headings.cv} id="cv" />
+                        <Entry title={headings.edu} id="education" />
+                        <Entry title={headings.jobs} id="jobs" />
+                        <Entry title={headings.other} id="other" />
+                    </ul>
+                </>
+            }
+        </div>
     </div>
 }
 
