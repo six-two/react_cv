@@ -1,0 +1,18 @@
+#root {
+    .rating {
+        position: relative;
+        font-size: 20pt;
+        
+        .outline {
+            color: black;
+        }
+        
+        .fill {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: yellow;
+            // z-index: -1;
+        }
+    }
+}

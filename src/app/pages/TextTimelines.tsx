@@ -6,6 +6,7 @@ import { LabelTranslations } from '../data/Labels';
 import SimpleTimeline from '../SimpleTimeline';
 import LocalizedText from '../LocalizedText';
 import PersonalInfo from '../PersonalInfo';
+import Ratings from '../Ratings';
 
 
 interface Props {
@@ -53,6 +54,9 @@ const TextTimelines = (props: Props) => {
             <LocalizedText text={headings.other} />
         </h2>
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "other")} />
+
+        <h2>TODO: Ratings</h2>
+        <Ratings />
     </div>
 }
 

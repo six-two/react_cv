@@ -15,8 +15,8 @@ import '../css/main.scss';
 
 // --------------------------- TODOs -------------------------------
 // Add language, framework, etc proficiency
-// Add link to my website and source code
 // Make it more mobile friendly?
+// Maybe add what type of work environment I would like / dislike (table)?
 // -----------------------------------------------------------------
 
 const DEBUG_CHARTS = false;
