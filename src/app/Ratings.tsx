@@ -2,34 +2,37 @@ import LocalizedText, { LString } from "./LocalizedText"
 import Rating from "./Rating"
 
 interface Props {
-
+    ratings: RatingInfo[],
 }
 
-interface RowProps {
+interface RatingInfo {
     label: LString,
     rating: number,
 }
 
-const Row = (props: RowProps) => {
-    return <div className="row">
-        <div className="cell">
+const compareRatings = (a: RatingInfo, b: RatingInfo): number => {
+    return b.rating - a.rating;
+}
+
+const Row = (props: RatingInfo) => {
+    return <div className="row-style">
+        <div className="text">
             <LocalizedText text={props.label} />
         </div>
-        <div className="cell">
-            <Rating score={props.rating} />
+        <Rating score={props.rating} />
+    </div>
+}
+
+const RatingsTable = (props: Props) => {
+    // Clone, then sort best to worst rating
+    const ratings = [...props.ratings];
+    ratings.sort(compareRatings);
+
+    return <div className="ratings">
+        <div className="table-style">
+            {ratings.map(x => Row(x))}
         </div>
     </div>
 }
 
-const Ratings = (props: Props) => {
-    return <div>
-        <div className="table">
-            <Row label="Windows 10" rating={0} />
-            <Row label="Mac OS" rating={3} />
-            <Row label="Arch Linux" rating={5} />
-            <Row label="Error" rating={31337} />
-        </div>
-    </div>
-}
-
-export default Ratings;
+export default RatingsTable;

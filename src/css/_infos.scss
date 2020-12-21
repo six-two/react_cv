@@ -1,15 +1,7 @@
 #root {
-    .pi-div {
-        display      : table;
-        width        : 400px;
-        margin       : auto;
-        border-radius: 10px;
-        border       : 1px solid gray;
-
-        .pi-label,
-        .pi-value {
-            display: table-cell;
-            padding: 5px;
-        }
+    .pi-label,
+    .pi-value {
+        display: table-cell;
+        padding: 5px;
     }
 }

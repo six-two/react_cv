@@ -1,0 +1,35 @@
+#root {
+    .table {
+        display: table;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .cell {
+        display: table-cell;
+    }
+
+    .table,
+    .table-style {
+        width        : 400px;
+        margin       : auto;
+        border-radius: 10px;
+        border       : 1px solid black;
+    }
+
+    .row,
+    .row-style {
+        padding: 0px 10px;
+
+        &:nth-child(even) {
+            background-color: $lgray;
+
+            // Fix a display bug
+            &:last-child {
+                border-radius: 0px 0px 10px 10px;
+            }
+        }
+    }
+}

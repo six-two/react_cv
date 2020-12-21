@@ -21,7 +21,7 @@ const TextTimelines = (props: Props) => {
             <LocalizedText text={headings.cv} />
         </h1>
 
-        <div className="pi-div">
+        <div className="table">
             <PersonalInfo
                 info={props.labels.infos.name} />
             <PersonalInfo
@@ -56,7 +56,7 @@ const TextTimelines = (props: Props) => {
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "other")} />
 
         <h2>TODO: Ratings</h2>
-        <Ratings />
+        <Ratings ratings={[{label: "test", rating: 1}, {label: "great", rating: 4.7}]} />
     </div>
 }
 
