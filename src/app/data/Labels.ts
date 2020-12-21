@@ -36,6 +36,13 @@ export interface PersonalInfos {
   cv: PersonalInfo,
 }
 
+export interface ExternalLinks {
+  heading: LString,
+  me: LString,
+  projects: LString,
+  source: LString,
+}
+
 export interface LabelTranslations {
   headings: Headings,
   settings: Settings,
@@ -43,6 +50,7 @@ export interface LabelTranslations {
   misc: {
     hidden_label: LString,
   },
+  external_links: ExternalLinks,
 }
 
 const getJsonDict = (category: string): any => {
@@ -109,6 +117,16 @@ const loadInfos = (): PersonalInfos => {
   };
 }
 
+const loadExternalLinks = (): ExternalLinks => {
+  const l = getJsonDict("external_links");
+  return {
+    heading: check(l.heading),
+    me: check(l.me),
+    projects: check(l.projects),
+    source: check(l.source),
+  };
+}
+
 export function loadLabels(): LabelTranslations {
   const m = getJsonDict("misc");
   return {
@@ -118,5 +136,6 @@ export function loadLabels(): LabelTranslations {
     misc: {
       hidden_label: m.hidden_label || ERR,
     },
+    external_links: loadExternalLinks(),
   }
 }

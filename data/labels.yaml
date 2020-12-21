@@ -80,4 +80,16 @@ misc:
   hidden_label:
     en: Reveal
     de: Anzeigen
-
+external_links:
+  heading:
+    en: External links
+    de: Externe Links
+  me:
+    en: My website
+    de: Meine Webseite
+  projects:
+    en: My projects
+    de: Meine Projekte
+  source:
+    en: Source Code
+    de: Quellcode

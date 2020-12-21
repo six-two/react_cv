@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
+import * as C from './redux/constants';
 import { LabelTranslations } from './data/Labels';
 import LocalizedText, { LString } from './LocalizedText';
 import LanguageChooser from './LanguageChooser';
 import DatePrecisionChooser from './DatePrecisionChooser';
+
 
 interface Props {
     labels?: LabelTranslations,
@@ -11,13 +13,12 @@ interface Props {
 
 interface EntryProps {
     title: LString,
-    id: string,
+    url: string,
 }
 
 const Entry = (props: EntryProps) => {
-    const dest = "#" + props.id;
     return <li>
-        <a href={dest}>
+        <a href={props.url}>
             <LocalizedText text={props.title} />
         </a>
     </li>
@@ -25,24 +26,35 @@ const Entry = (props: EntryProps) => {
 
 const Sidebar = (props: Props) => {
     const headings = props.labels?.headings;
+    const links = props.labels?.external_links;
     return <div className="sidebar no-print">
         <div className="content">
             <div className="heading first">Language</div>
             <LanguageChooser />
-            {props.labels && headings &&
+            {props.labels && headings && links &&
                 <>
                     <div className="heading">
                         <LocalizedText text={props.labels.settings.date_precision.label} />
                     </div>
                     <DatePrecisionChooser />
+
                     <div className="heading">
                         <LocalizedText text={headings.toc} />
                     </div>
                     <ul>
-                        <Entry title={headings.cv} id="cv" />
-                        <Entry title={headings.edu} id="education" />
-                        <Entry title={headings.jobs} id="jobs" />
-                        <Entry title={headings.other} id="other" />
+                        <Entry title={headings.cv} url="#cv" />
+                        <Entry title={headings.edu} url="#education" />
+                        <Entry title={headings.jobs} url="#jobs" />
+                        <Entry title={headings.other} url="#other" />
+                    </ul>
+
+                    <div className="heading">
+                        <LocalizedText text={links.heading} />
+                    </div>
+                    <ul>
+                        <Entry title={links.me} url={C.MY_WEBSITE} />
+                        <Entry title={links.projects} url={C.MY_PROJECTS} />
+                        <Entry title={links.source} url={C.CV_SOURCE} />
                     </ul>
                 </>
             }
