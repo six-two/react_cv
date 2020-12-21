@@ -2,11 +2,11 @@
     .sidebar {
         // For small screens put the sidebar to the top of the page
         box-sizing      : border-box;
-        padding         : 10px;
         background-color: lightgray;
 
         .content {
             width : $sidebar-width;
+            padding         : 10px;
             margin: auto;
         }
 

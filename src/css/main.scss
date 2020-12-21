@@ -10,6 +10,10 @@ $lgray        : #f4f4f4;
 #root {
   min-width: $cv-width;
 
+  * {
+    box-sizing: border-box;
+  }
+
   h1,
   h2,
   .center {
