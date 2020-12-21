@@ -7,6 +7,7 @@ import SimpleTimeline from '../SimpleTimeline';
 import LocalizedText from '../LocalizedText';
 import PersonalInfo from '../PersonalInfo';
 import Ratings from '../Ratings';
+import { loadRatingData } from '../data/Ratings';
 
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
 
 const TextTimelines = (props: Props) => {
     const headings = props.labels.headings;
+    const rating_data = loadRatingData();
     return <div>
         <h1 id="cv">
             <LocalizedText text={headings.cv} />
@@ -55,8 +57,12 @@ const TextTimelines = (props: Props) => {
         </h2>
         <SimpleTimeline entries={props.timeline.filter(x => x.type === "other")} />
 
-        <h2>TODO: Ratings</h2>
-        <Ratings ratings={[{label: "test", rating: 1}, {label: "great", rating: 4.7}]} />
+        <h2 id="it-skills">
+            <LocalizedText text={headings.it_skills} />
+        </h2>
+        <Ratings
+            heading={rating_data.prog_lang.heading}
+            ratings={rating_data.prog_lang.ratings} />
     </div>
 }
 

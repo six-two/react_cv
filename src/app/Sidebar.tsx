@@ -46,6 +46,7 @@ const Sidebar = (props: Props) => {
                         <Entry title={headings.edu} url="#education" />
                         <Entry title={headings.jobs} url="#jobs" />
                         <Entry title={headings.other} url="#other" />
+                        <Entry title={headings.it_skills} url="#it-skills" />
                     </ul>
 
                     <div className="heading">

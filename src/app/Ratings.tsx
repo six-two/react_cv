@@ -2,6 +2,7 @@ import LocalizedText, { LString } from "./LocalizedText"
 import Rating from "./Rating"
 
 interface Props {
+    heading: LString,
     ratings: RatingInfo[],
 }
 
@@ -29,6 +30,10 @@ const RatingsTable = (props: Props) => {
     ratings.sort(compareRatings);
 
     return <div className="ratings">
+        <h3>
+            <LocalizedText text={props.heading} />
+        </h3>
+
         <div className="table-style">
             {ratings.map(x => Row(x))}
         </div>

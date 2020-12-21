@@ -31,7 +31,7 @@ def yaml2json(inputFile, outputFile):
 
 
 if __name__ == "__main__":
-    FILE_NAMES = ["timeline", "labels"]
+    FILE_NAMES = ["timeline", "labels", "ratings"]
     IN_DIR = "."
     OUT_DIR = "../src/app/data"
 

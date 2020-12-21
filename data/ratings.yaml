@@ -1,0 +1,13 @@
+prog_lang:
+  heading:
+    en: Programming languages
+    de: Programiersprachen
+  ratings:
+    - label: Python
+      rating: 4
+    - label: Rust
+      rating: 1
+    - label: Java
+      rating: 3
+    - label: JavaScript/TypeScript
+      rating: 4

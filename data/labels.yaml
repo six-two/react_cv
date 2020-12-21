@@ -14,6 +14,9 @@ headings:
   other:
     en: Other
     de: Anderes
+  it_skills:
+    en: Computer skills
+    de: Computer Skills
 settings:
   date_precision:
     label:

@@ -15,6 +15,7 @@ export interface Headings {
   edu: LString,
   jobs: LString,
   other: LString,
+  it_skills: LString,
 }
 
 export interface Settings {
@@ -71,12 +72,12 @@ const parseInfo = (json_obj: any): PersonalInfo => {
   }
 }
 
-const check = (e: any) => {
+export const check = (e: any, default_value?: any) => {
   if (e) {
     return e;
   } else {
     console.warn("Missing field in JSON");
-    return ERR;
+    return default_value || ERR;
   }
 }
 
@@ -88,6 +89,7 @@ const loadHeadings = (): Headings => {
     edu: check(h.edu),
     jobs: check(h.jobs),
     other: check(h.other),
+    it_skills: check(h.it_skills),
   };
 }
 
