@@ -1,6 +1,7 @@
 import React from 'react';
 import DataLoader from './DataLoader';
 import Sidebar from './Sidebar';
+import SidebarManager from './SidebarManager';
 import UrlHashManager from './UrlHashManager';
 import GraphExperiment from './pages/GraphExperiment';
 import TextCV from './pages/TextTimelines';
@@ -19,19 +20,16 @@ import '../css/main.scss';
 // Fix it for mobile
 // -----------------------------------------------------------------
 
-const DEBUG_CHARTS = false;
-
-
 export default function App() {
   return <div className="app">
-    <Sidebar />
+    <SidebarManager>
+      <div className="main">
+        <DataLoader>
+          <TextCV />
+        </DataLoader>
 
-    <div className="main">
-      <DataLoader>
-        {DEBUG_CHARTS ? <GraphExperiment /> : <TextCV />}
-      </DataLoader>
-
-      <UrlHashManager />
-    </div>
+        <UrlHashManager />
+      </div>
+    </SidebarManager>
   </div>
 }

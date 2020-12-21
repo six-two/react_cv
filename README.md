@@ -1,5 +1,11 @@
 # Interactive CV
 
+## Images
+
+Name | License | Source
+---|---|---
+menu.svg | Public Domain | https://freesvg.org/list-menu
+
 ## Available Scripts
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
