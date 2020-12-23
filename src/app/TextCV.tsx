@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { JsonData, ReduxState } from '../redux/store';
-import { TimelineEntry } from '../data/Timeline';
-import { LabelTranslations } from '../data/Labels';
-import SimpleTimeline from '../SimpleTimeline';
-import LocalizedText from '../LocalizedText';
-import PersonalInfo from '../PersonalInfo';
-import Ratings from '../Ratings';
-import { loadRatingData } from '../data/Ratings';
+import { JsonData, ReduxState } from './redux/store';
+import { TimelineEntry } from './data/Timeline';
+import { LabelTranslations } from './data/Labels';
+import SimpleTimeline from './SimpleTimeline';
+import LocalizedText from './LocalizedText';
+import PersonalInfo from './PersonalInfo';
+import Ratings from './Ratings';
+import { loadRatingData } from './data/Ratings';
 
 
 interface Props {

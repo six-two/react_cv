@@ -2,8 +2,7 @@ import React from 'react';
 import DataLoader from './DataLoader';
 import Sidebar from './Sidebar';
 import UrlHashManager from './UrlHashManager';
-import GraphExperiment from './pages/GraphExperiment';
-import TextCV from './pages/TextTimelines';
+import TextCV from './TextCV';
 import '../css/main.scss';
 
 // @FUTURE_ME:
@@ -19,8 +18,6 @@ import '../css/main.scss';
 // Maybe add what type of work environment I would like / dislike (table)?
 // -----------------------------------------------------------------
 
-const DEBUG_CHARTS = false;
-
 
 export default function App() {
   return <div className="app">
@@ -28,7 +25,7 @@ export default function App() {
 
     <div className="main">
       <DataLoader>
-        {DEBUG_CHARTS ? <GraphExperiment /> : <TextCV />}
+        <TextCV />  
       </DataLoader>
 
       <UrlHashManager />
