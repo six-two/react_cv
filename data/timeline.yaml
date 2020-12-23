@@ -107,23 +107,28 @@
   d: 2017-02-27 - 2017-03-17
   x: job
   t:
-    en: TODO, see "de"
+    en: |-
+      - Analysis and visualization of data with the programming language R
+      - Creating a presentation on the principal component analysis
+      - Training of a neural network for error detection
     de: |-
-      TODO
-      Data science, R, Principal component analysis
+      - Analyse und Visualisierung von Daten mit der Programmiersprache R
+      - Erstellung einer Präsentation über die Hauptkomponentenanalyse
+      - Training eines neuronalen Netzwerkes zur Fehlererkennung
 
 - h:
     en: Internship
-    de: Vorpraktikum
+    de: Praktikum
   p: *lemgo
   c: *fraunhofer
   d: 2016-07-25 - 2016-08-26
   x: job
   t:
-    en: TODO, see "de"
+    en: |-
+      - Electronic circuit design and soldering work
+      - Commissioning and programming of an industrial controller with field devices based on ProfiNet
+      - Programming of a collaborative robot
     de: |-
-      TODO
-      - Kolloborativen Roboter programmiert
       - Elektronikschaltungsdesign und Lötarbeiten
-      - Profinet Feldgeräte
-      - Programierung eines Rhaspberry Pi mit IEC-61131 (Structured Text) 
+      - Inbetriebnahme und Programmierung einer Industriesteuerung mit Feldgeräten auf Basis von ProfiNet
+      - Programmierung eines kolloborativen Roboters
