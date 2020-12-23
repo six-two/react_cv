@@ -2,6 +2,12 @@ $cv-width     : 700px;
 $sidebar-width: 200px;
 $lgray        : #f4f4f4;
 
+#root {
+  * {
+    box-sizing: border-box;
+  }
+}
+
 @import "tables";
 @import "button";
 @import "infos";
