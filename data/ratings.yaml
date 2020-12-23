@@ -11,6 +11,10 @@ prog_lang:
       rating: 3
     - label: JavaScript/TypeScript
       rating: 4
+    - label: C/C++
+      rating: 2
+    - label: x86 assembly
+      rating: 1
 
 languages:
   heading:
@@ -28,4 +32,26 @@ languages:
     - label:
         en: Spanish
         de: Spanisch
+      rating: 1
+
+software:
+  heading:
+    en: Software
+    de: Software
+  ratings:
+    - label: Linux
+      rating: 5
+    - label: Windows
+      rating: 4
+    - label: Microsoft/Libre/Open-Office
+      rating: 3
+    - label: Git
+      rating: 3
+    - label: Wireshark
+      rating: 3
+    - label: Ghidra
+      rating: 1
+    - label: Burp proxy
+      rating: 2
+    - label: GIMP
       rating: 1

@@ -14,7 +14,7 @@ import '../css/main.scss';
 // Failed to compile."""
 
 // --------------------------- TODOs -------------------------------
-// Add language, framework, etc proficiency
+// Add skills: frameworks, tools
 // Make it more mobile friendly?
 // Maybe add what type of work environment I would like / dislike (table)?
 // -----------------------------------------------------------------

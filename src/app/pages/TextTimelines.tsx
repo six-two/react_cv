@@ -64,6 +64,8 @@ const TextTimelines = (props: Props) => {
             data={rating_data.prog_lang} />
         <Ratings
             data={rating_data.languages} />
+        <Ratings
+            data={rating_data.software} />
     </div>
 }
 
