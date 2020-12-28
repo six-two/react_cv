@@ -5,15 +5,21 @@ import { LabelTranslations } from './data/Labels';
 import LocalizedText, { LString } from './LocalizedText';
 import LanguageChooser from './LanguageChooser';
 import DatePrecisionChooser from './DatePrecisionChooser';
+import { SectionData } from './sections/Section';
 
 
 interface Props {
     labels?: LabelTranslations,
+    sections: SectionData[],
 }
 
 interface EntryProps {
     title: LString,
     url: string,
+}
+
+interface TocProps {
+    sections: SectionData[],
 }
 
 const Entry = (props: EntryProps) => {
@@ -22,6 +28,27 @@ const Entry = (props: EntryProps) => {
             <LocalizedText text={props.title} />
         </a>
     </li>
+}
+
+// A recursive conponent for rendering the table of contents
+const TableOfContents = (props: TocProps) => {
+    const entries = props.sections && props.sections.filter(s => s.toc_id);
+    if (entries) {
+        return <ul>
+            {entries.map((section, i) =>
+                <div key={i}>
+                    <Entry
+                        title={section.heading}
+                        url={"#" + section.toc_id} />
+
+                    {section.subsections &&
+                        <TableOfContents sections={section.subsections} />}
+                </div>
+            )}
+        </ul>
+    } else {
+        return null;
+    }
 }
 
 const Sidebar = (props: Props) => {
@@ -41,13 +68,8 @@ const Sidebar = (props: Props) => {
                     <div className="heading">
                         <LocalizedText text={headings.toc} />
                     </div>
-                    <ul>
-                        <Entry title={headings.cv} url="#cv" />
-                        <Entry title={headings.edu} url="#education" />
-                        <Entry title={headings.jobs} url="#jobs" />
-                        <Entry title={headings.other} url="#other" />
-                        <Entry title={headings.it_skills} url="#it-skills" />
-                    </ul>
+
+                    <TableOfContents sections={props.sections} />
 
                     <div className="heading">
                         <LocalizedText text={links.heading} />

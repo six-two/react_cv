@@ -3,6 +3,7 @@ import { ReduxState } from './redux/store';
 import { setData } from './redux/actions';
 import { loadTimeline } from './data/Timeline';
 import { loadLabels } from './data/Labels';
+import { loadRatingData } from './data/Ratings';
 
 
 export interface Props {
@@ -15,6 +16,7 @@ const loadData = () => {
         setData({
             timeline: loadTimeline(),
             labels: loadLabels(),
+            ratings: loadRatingData(),
         });
     } catch (e) {
         console.error("Failed to load data from json files:", e);

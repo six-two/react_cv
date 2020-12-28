@@ -5,6 +5,9 @@ headings:
   cv:
     en: CV
     de: Lebenslauf
+  personal_infos:
+    en: Personal information
+    de: Persönlich Daten
   jobs:
     en: Work experience
     de: Berufserfahrung
@@ -14,9 +17,9 @@ headings:
   other:
     en: Other
     de: Anderes
-  it_skills:
-    en: Computer skills
-    de: Computer Skills
+  skills:
+    en: Skills
+    de: Fähigkeiten
 settings:
   date_precision:
     label:

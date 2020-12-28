@@ -1,6 +1,6 @@
-import { RatingRow, RatingTable } from "./data/Ratings";
-import LocalizedText from "./LocalizedText"
-import Rating from "./Rating"
+import { RatingRow, RatingTable } from "../data/Ratings";
+import LocalizedText from "../LocalizedText"
+import StarRating from "../StarRating"
 
 interface Props {
     data: RatingTable,
@@ -15,7 +15,7 @@ const Row = (props: RatingRow) => {
         <div className="text">
             <LocalizedText text={props.label} />
         </div>
-        <Rating score={props.rating} />
+        <StarRating score={props.rating} />
     </div>
 }
 
@@ -25,12 +25,13 @@ const RatingsTable = (props: Props) => {
     ratings.sort(compareRatings);
 
     return <div className="ratings">
-        <h3>
-            <LocalizedText text={props.data.heading} />
-        </h3>
-
         <div className="table-style">
-            {ratings.map(x => Row(x))}
+            {ratings.map((rating, i) =>
+                <Row
+                    key={i}
+                    label={rating.label}
+                    rating={rating.rating} />
+            )}
         </div>
     </div>
 }

@@ -12,10 +12,11 @@ export interface PersonalInfo {
 export interface Headings {
   toc: LString,
   cv: LString,
+  personal_infos: LString,
   edu: LString,
   jobs: LString,
   other: LString,
-  it_skills: LString,
+  skills: LString,
 }
 
 export interface Settings {
@@ -86,10 +87,11 @@ const loadHeadings = (): Headings => {
   return {
     toc: check(h.toc),
     cv: check(h.cv),
+    personal_infos: check(h.personal_infos),
     edu: check(h.edu),
     jobs: check(h.jobs),
     other: check(h.other),
-    it_skills: check(h.it_skills),
+    skills: check(h.skills),
   };
 }
 

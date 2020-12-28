@@ -3,6 +3,7 @@ import reducer from './reducer';
 import { TimelineEntry } from '../data/Timeline';
 import { LabelTranslations } from '../data/Labels';
 import * as C from './constants';
+import { RatingData } from '../data/Ratings';
 
 export interface ReduxState {
   data?: JsonData,
@@ -14,6 +15,7 @@ export interface ReduxState {
 export interface JsonData {
   labels: LabelTranslations,
   timeline: TimelineEntry[],
+  ratings: RatingData,
 }
 
 export const fallbackState: ReduxState = {

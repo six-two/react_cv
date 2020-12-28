@@ -1,8 +1,7 @@
 import React from 'react';
 import DataLoader from './DataLoader';
-import Sidebar from './Sidebar';
 import UrlHashManager from './UrlHashManager';
-import TextCV from './TextCV';
+import SectionManager from './sections/SectionManager';
 import '../css/main.scss';
 
 // @FUTURE_ME:
@@ -13,7 +12,7 @@ import '../css/main.scss';
 // Failed to compile."""
 
 // --------------------------- TODOs -------------------------------
-// Add skills: frameworks, tools
+// Add skills: frameworks
 // Make it more mobile friendly?
 // Maybe add what type of work environment I would like / dislike (table)?
 // -----------------------------------------------------------------
@@ -21,14 +20,10 @@ import '../css/main.scss';
 
 export default function App() {
   return <div className="app">
-    <Sidebar />
+    <DataLoader>
+      <SectionManager />
+    </DataLoader>
 
-    <div className="main">
-      <DataLoader>
-        <TextCV />  
-      </DataLoader>
-
-      <UrlHashManager />
-    </div>
+    <UrlHashManager />
   </div>
 }

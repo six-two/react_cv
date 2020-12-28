@@ -1,9 +1,9 @@
 import React from 'react';
-import { TimelineEntry } from './data/Timeline';
-import LocalizedText from './LocalizedText';
-import LocalizedTimeSpan from './LocalizedTimeSpan';
-import LocationLink from './LocationLink';
-import LinkTextComponent from './LinkTextComponent';
+import { TimelineEntry } from '../data/Timeline';
+import LocalizedText from '../LocalizedText';
+import LocalizedTimeSpan from '../LocalizedTimeSpan';
+import LocationLink from '../LocationLink';
+import LinkTextComponent from '../LinkTextComponent';
 
 
 interface Props {

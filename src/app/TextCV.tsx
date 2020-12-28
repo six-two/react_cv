@@ -1,82 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { JsonData, ReduxState } from './redux/store';
-import { TimelineEntry } from './data/Timeline';
+import { ReduxState } from './redux/store';
 import { LabelTranslations } from './data/Labels';
-import SimpleTimeline from './SimpleTimeline';
 import LocalizedText from './LocalizedText';
-import PersonalInfo from './PersonalInfo';
-import Ratings from './Ratings';
-import { loadRatingData } from './data/Ratings';
-
+import Sidebar from './Sidebar';
+import RecursiveSectionRenderer, { SectionData } from './sections/Section';
 
 interface Props {
-    labels: LabelTranslations,
-    timeline: TimelineEntry[],
+    labels?: LabelTranslations,
+    sections: SectionData[],
 }
 
 const TextTimelines = (props: Props) => {
-    const headings = props.labels.headings;
-    const rating_data = loadRatingData();
-    return <div>
-        <h1 id="cv">
-            <LocalizedText text={headings.cv} />
-        </h1>
+    if (props.labels) {
+        return <>
+            <Sidebar sections={props.sections} />
 
-        <div className="table">
-            <PersonalInfo
-                info={props.labels.infos.name} />
-            <PersonalInfo
-                info={props.labels.infos.email}
-                is_email={true} />
-            <PersonalInfo
-                info={props.labels.infos.location} />
-            <PersonalInfo
-                info={props.labels.infos.nationality} />
-            <PersonalInfo
-                info={props.labels.infos.gender} />
-            <PersonalInfo
-                info={props.labels.infos.birthyear} />
-            <PersonalInfo
-                info={props.labels.infos.cv}
-                is_url={true} />
-        </div>
+            <div className="main">
+                <h1 id="cv">
+                    <LocalizedText text={props.labels.headings.cv} />
+                </h1>
 
-        <h2 id="education">
-            <LocalizedText text={headings.edu} />
-        </h2>
-        <SimpleTimeline entries={props.timeline.filter(x => x.type === "edu")} />
-
-        <h2 id="jobs">
-            <LocalizedText text={headings.jobs} />
-        </h2>
-        <SimpleTimeline entries={props.timeline.filter(x => x.type === "job")} />
-
-        <h2 id="other">
-            <LocalizedText text={headings.other} />
-        </h2>
-        <SimpleTimeline entries={props.timeline.filter(x => x.type === "other")} />
-
-        <h2 id="it-skills">
-            <LocalizedText text={headings.it_skills} />
-        </h2>
-        <Ratings
-            data={rating_data.prog_lang} />
-        <Ratings
-            data={rating_data.languages} />
-        <Ratings
-            data={rating_data.software} />
-    </div>
+                {props.sections.map((sub, i) => <RecursiveSectionRenderer
+                    key={i}
+                    section={sub}
+                    level={1} />
+                )}
+            </div>
+        </>
+    } else {
+        return null;
+    }
 }
 
 const mapStateToProps = (state: ReduxState) => {
-    if (!state.data) {
-        console.warn("ReduxState has no data loaded");
-    }
-    const data = state.data as JsonData;
     return {
-        labels: data.labels,
-        timeline: data.timeline,
+        labels: state.data?.labels,
     }
 };
 
