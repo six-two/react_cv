@@ -6,6 +6,10 @@ $lgray        : #f4f4f4;
   * {
     box-sizing: border-box;
   }
+
+  .expand {
+    flex: 1;
+  }
 }
 
 @import "tables";
@@ -18,10 +22,6 @@ $lgray        : #f4f4f4;
 #root {
   min-width: $cv-width;
   margin-bottom: 10px;
-
-  * {
-    box-sizing: border-box;
-  }
 
   h1,
   h2,

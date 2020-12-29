@@ -34,7 +34,7 @@ function getId() {
 }
 
 
-function parseDate(dateString: string): LDate {
+export function parseDate(dateString: string): LDate {
   if (!dateString) {
     throw new Error("Empty date string");
   }

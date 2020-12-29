@@ -4,6 +4,7 @@ import { TimelineEntry } from '../data/Timeline';
 import { LabelTranslations } from '../data/Labels';
 import * as C from './constants';
 import { RatingData } from '../data/Ratings';
+import { LDate } from '../LocalizedDate';
 
 export interface ReduxState {
   data?: JsonData,
@@ -16,6 +17,9 @@ export interface JsonData {
   labels: LabelTranslations,
   timeline: TimelineEntry[],
   ratings: RatingData,
+  build: {
+    date: LDate,
+  }
 }
 
 export const fallbackState: ReduxState = {

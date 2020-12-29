@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
-import { ReduxState } from './redux/store';
+import { JsonData, ReduxState } from './redux/store';
 import * as C from './redux/constants';
-import { LabelTranslations } from './data/Labels';
 import LocalizedText, { LString } from './LocalizedText';
 import LanguageChooser from './LanguageChooser';
 import DatePrecisionChooser from './DatePrecisionChooser';
 import { SectionData } from './sections/Section';
+import { getLocalizedDate } from './LocalizedDate';
 
 
 interface Props {
-    labels?: LabelTranslations,
+    data?: JsonData,
+    lang: string,
     sections: SectionData[],
 }
 
@@ -52,41 +53,53 @@ const TableOfContents = (props: TocProps) => {
 }
 
 const Sidebar = (props: Props) => {
-    const headings = props.labels?.headings;
-    const links = props.labels?.external_links;
-    return <div className="sidebar no-print">
-        <div className="content">
-            <div className="heading first">Language</div>
-            <LanguageChooser />
-            {props.labels && headings && links &&
-                <>
-                    <div className="heading">
-                        <LocalizedText text={props.labels.settings.date_precision.label} />
-                    </div>
-                    <DatePrecisionChooser />
+    if (props.data) {
+        const headings = props.data.labels.headings;
+        const links = props.data.labels.external_links;
+        const date_precision_label = props.data.labels.settings.date_precision.label;
+        // This should generally be true, since the app should only be rebuilt when I push a change
+        const last_updated_date = props.data.build.date;
+        return <div className="sidebar no-print">
+            <div className="content">
+                <div className="heading first">Language</div>
+                <LanguageChooser />
+                <div className="heading">
+                    <LocalizedText text={date_precision_label} />
+                </div>
+                <DatePrecisionChooser />
 
-                    <div className="heading">
-                        <LocalizedText text={headings.toc} />
-                    </div>
+                <div className="heading">
+                    <LocalizedText text={headings.toc} />
+                </div>
 
-                    <TableOfContents sections={props.sections} />
+                <TableOfContents sections={props.sections} />
 
-                    <div className="heading">
-                        <LocalizedText text={links.heading} />
+                <div className="heading">
+                    <LocalizedText text={links.heading} />
+                </div>
+                <ul>
+                    <Entry title={links.me} url={C.MY_WEBSITE} />
+                    <Entry title={links.projects} url={C.MY_PROJECTS} />
+                    <Entry title={links.source} url={C.CV_SOURCE} />
+                </ul>
+
+                <div className="expand" />
+                <div className="last-updated">
+                    <LocalizedText text={props.data.labels.misc.last_updated} />
+                    <div>
+                        {getLocalizedDate(last_updated_date, props.lang, C.DATE_PRECISION_DAY)}
                     </div>
-                    <ul>
-                        <Entry title={links.me} url={C.MY_WEBSITE} />
-                        <Entry title={links.projects} url={C.MY_PROJECTS} />
-                        <Entry title={links.source} url={C.CV_SOURCE} />
-                    </ul>
-                </>
-            }
-        </div>
-    </div>
+                </div>
+            </div>
+        </div >
+    } else {
+        return null;
+    }
 }
 
 const mapStateToProps = (state: ReduxState) => ({
-    labels: state.data?.labels,
+    data: state.data,
+    lang: state.language,
 });
 
 export default connect(mapStateToProps)(Sidebar);

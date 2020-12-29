@@ -51,6 +51,7 @@ export interface LabelTranslations {
   infos: PersonalInfos,
   misc: {
     hidden_label: LString,
+    last_updated: LString,
   },
   external_links: ExternalLinks,
 }
@@ -138,7 +139,8 @@ export function loadLabels(): LabelTranslations {
     settings: loadSettings(),
     infos: loadInfos(),
     misc: {
-      hidden_label: m.hidden_label || ERR,
+      hidden_label: check(m.hidden_label),
+      last_updated: check(m.last_updated),
     },
     external_links: loadExternalLinks(),
   }

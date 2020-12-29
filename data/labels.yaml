@@ -86,6 +86,9 @@ misc:
   hidden_label:
     en: Reveal
     de: Anzeigen
+  last_updated:
+    en: Last updated
+    de: "Zuletzt aktualisiert:"
 external_links:
   heading:
     en: External links

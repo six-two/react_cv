@@ -1,14 +1,21 @@
 import { connect } from 'react-redux';
 import { ReduxState } from './redux/store';
 import { setData } from './redux/actions';
-import { loadTimeline } from './data/Timeline';
+import { loadTimeline, parseDate } from './data/Timeline';
 import { loadLabels } from './data/Labels';
 import { loadRatingData } from './data/Ratings';
+import buildMetadata from './data/build.json';
 
 
 export interface Props {
     loaded: boolean,
     children: any,
+}
+
+const loadBuildMetadata = () => {
+    return {
+        date: parseDate(buildMetadata.build_date),
+    }
 }
 
 const loadData = () => {
@@ -17,6 +24,7 @@ const loadData = () => {
             timeline: loadTimeline(),
             labels: loadLabels(),
             ratings: loadRatingData(),
+            build: loadBuildMetadata(),
         });
     } catch (e) {
         console.error("Failed to load data from json files:", e);
