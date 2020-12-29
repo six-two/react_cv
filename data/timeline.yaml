@@ -54,6 +54,7 @@
       Setting up a Graylog and an Elasticsearch server.
     de: |-
       - Entwurf und Programmierung eines Intrusion Detection Systems in Python (Demonstrator für Hannover Messe)
+      - Installation und Konfiguration von Graylog, Elasticsearch und Kibana
 
 - h: Factoryhack 2017 (Hackathon)
   p: *lemgo
