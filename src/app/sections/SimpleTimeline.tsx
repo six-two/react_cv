@@ -1,6 +1,7 @@
 import React from 'react';
 import { TimelineEntry } from '../data/Timeline';
 import LocalizedText from '../LocalizedText';
+import LocalizedMarkdown from '../LocalizedMarkdown';
 import LocalizedTimeSpan from '../LocalizedTimeSpan';
 import LocationLink from '../LocationLink';
 import LinkTextComponent from '../LinkTextComponent';
@@ -38,7 +39,7 @@ export function renderSimpleTimelineEntry(entry: TimelineEntry) {
           place={entry.place} />
       </div>
       <div className="description">
-        <LocalizedText text={entry.description} multiLine="text" />
+        <LocalizedMarkdown text={entry.description} />
       </div>
     </div>
   </div>

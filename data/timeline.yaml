@@ -26,9 +26,9 @@
   x: edu
   t:
     en: |-
-      Low level programming in C and assembly language.
-      Development of an Android application in Java.
-      Security of WiFi networks.
+      - Low level programming in C and assembly language.
+      - Development of an Android application in Java.
+      - Security of WiFi networks.
     de: |-
       - Inhalte: Eingebettete Systeme, Android App Entwicklung, Verteilte Systeme, Theoretische Informatik
       - Studienarbeit: Angriffe auf WPA2-WLAN Netzwerke
@@ -48,7 +48,9 @@
   t:
     en: |-
       Design and Programming of Intrusion Detection Systems in Python.
+
       Writing small python programs for a Raspberry Pi.
+
       Setting up a Graylog and an Elasticsearch server.
     de: |-
       - Entwurf und Programmierung eines Intrusion Detection Systems in Python (Demonstrator für Hannover Messe)
