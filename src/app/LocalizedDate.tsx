@@ -16,6 +16,27 @@ interface Props {
   lang: string,
 }
 
+// returns x
+// x > 0 if a > b
+// x === 0 if a === b
+// x < 0 if a < b
+export function compareDates(a: LDate, b: LDate): number {
+  return ldateToUTC(a) - ldateToUTC(b);
+}
+
+const ldateToUTC = (date: LDate): number => {
+  if (date.isNow) {
+    return Date.now();
+  } else {
+    const y = date.year;
+    // Just give some default values that are in the middle
+    const m = date.month ? date.month - 1 : 5;//they use 0 based months :(
+    const d = date.day ?? 15;
+
+    return Date.UTC(y, m, d, 12, 0, 0);
+  }
+}
+
 export function getLocalizedDate(date: LDate, language: string, precision: string): string {
   if (date.isNow) {
     switch (language) {
@@ -47,13 +68,7 @@ export function getLocalizedDate(date: LDate, language: string, precision: strin
       month: show_month ? 'short' : undefined,
       day: show_day ? 'numeric' : undefined,
     };
-
-    const y = date.year;
-    // Just give some default values that are in the middle
-    // That should prevent timezone issues from doing to much damage
-    const m = date.month ? date.month - 1 : 5;//they use 0 based months :(
-    const d = date.day ?? 15;
-    const native_date = new Date(Date.UTC(y, m, d, 12, 0, 0));
+    const native_date = new Date(ldateToUTC(date));
     return native_date.toLocaleDateString(language, options);
   }
 }
