@@ -1,5 +1,5 @@
 #root {
-    button:not(.close-button) {
+    button {
         color           : black;
         font-weight     : bold;
         background-color: white;
@@ -18,13 +18,5 @@
             background-color: gray;
             cursor          : not-allowed;
         }
-    }
-
-    .close-button {
-        float: right;
-        padding: 5px;
-        border: none;
-        background-color: #0000;
-        cursor: pointer;
     }
 }
