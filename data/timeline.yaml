@@ -26,13 +26,14 @@
   x: edu
   t:
     en: |-
-      - Low level programming in C and assembly language.
-      - Development of an Android application in Java.
-      - Security of WiFi networks.
+      - Courses included: embedded systems (C & assembly), Android app development (Java), distributed systems, theoretical informatics, IT security, machine learning, 
+      - Project work: Attacks on WPA2-WLAN networks
+      - Bachelors thesis: Development and implementation of a WLAN-Intrusion Detection System
+      - Final grade: 1,7 (an a scale from 1.0 [best] to 5.0 [failed])
     de: |-
-      - Inhalte: Eingebettete Systeme, Android App Entwicklung, Verteilte Systeme, Theoretische Informatik
+      - Inhalte: Eingebettete Systeme (C & Assembly), Android App Entwicklung (Java), Verteilte Systeme, Theoretische Informatik, Datensicherheit, Maschinelles Lernen
       - Studienarbeit: Angriffe auf WPA2-WLAN Netzwerke
-      - Bachelorarbeit: Entwicklung und Implementierung eines WLAN-Intrusion Detection Systems (in Python)
+      - Bachelorarbeit: Entwicklung und Implementierung eines WLAN-Intrusion Detection Systems
       - Gesamtnote: 1,7
 
 
@@ -47,13 +48,12 @@
   x: job
   t:
     en: |-
-      Design and Programming of Intrusion Detection Systems in Python.
-
-      Writing small python programs for a Raspberry Pi.
-
-      Setting up a Graylog and an Elasticsearch server.
+      - Design and Programming of Intrusion Detection Systems in Python (was presented on the Hannover Messe).
+      - Writing small python programs for a Raspberry Pi.
+      - Setting up a server with Graylog, Kibana and Elasticsearch.
     de: |-
       - Entwurf und Programmierung eines Intrusion Detection Systems in Python (Demonstrator für Hannover Messe)
+      - Programmierung eines Raspberry Pi mit Python
       - Installation und Konfiguration von Graylog, Elasticsearch und Kibana
 
 - h: Factoryhack 2017 (Hackathon)
@@ -75,8 +75,8 @@
   x: edu
   t:
     en: |-
-      - Major Subjects: mathematics, physics
-      - Grade: 1.8 (an a scale from 1.0 [best] to 5.0 [failed])
+      - Major subjects: mathematics, physics
+      - Final grade: 1.8 (an a scale from 1.0 [best] to 5.0 [failed])
     de: |-
       - Leistungskurse: Mathematik, Physik
       - Gesamtnote: 1,8
