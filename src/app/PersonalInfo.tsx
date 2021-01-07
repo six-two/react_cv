@@ -52,10 +52,10 @@ const PersonalInfoLabel = (props: Props) => {
     }
 
     return <div className="row">
-        <div className="pi-label">
+        <div className="cell pi-label">
             {getLocalizedText(props.info.label, props.lang)}
         </div>
-        <div className="pi-value">
+        <div className="cell pi-value">
             {value}
         </div>
     </div>

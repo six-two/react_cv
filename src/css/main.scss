@@ -6,33 +6,12 @@ $lgray        : #f4f4f4;
   * {
     box-sizing: border-box;
   }
-
-  .expand {
-    flex: 1;
-  }
 }
 
+@import "general";
 @import "tables";
 @import "button";
-@import "infos";
 @import "timeline";
 @import "sidebar";
 @import "ratings";
-
-#root {
-  min-width: $cv-width;
-  margin-bottom: 10px;
-
-  h1,
-  h2,
-  h3,
-  .center {
-    text-align: center;
-  }
-
-  .multi-line>p {
-    margin: 0px;
-  }
-}
-
 @import "print";
