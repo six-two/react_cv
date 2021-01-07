@@ -21,4 +21,17 @@
     .expand {
         flex: 1;
     }
+
+    a {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
 }
