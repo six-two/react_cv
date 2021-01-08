@@ -15,8 +15,9 @@
 
         &:hover,
         &:focus {
-            color           : white;
-            background-color: black;
+            color           : blue;
+            background-color: lightblue;
+            border-color    : blue;
         }
 
         &:disabled {

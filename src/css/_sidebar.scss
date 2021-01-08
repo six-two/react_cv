@@ -1,9 +1,22 @@
+$sidebar-width    : 250px;
+
 #root {
     .sidebar {
         // For small screens put the sidebar to the top of the page
         box-sizing      : border-box;
-        background-color: #ddd;
-        border-bottom   : 1px solid black;
+        background-color: #222;
+        color           : white;
+        // border-bottom   : 1px solid black;
+        font-size       : 13pt;
+
+        a {
+            color: rgb(86, 235, 255);
+        }
+
+        // Make the border of the select elements match its background color
+        .button-style:not(:focus):not(:hover) {
+            border-color: transparent;
+        }
 
         .content {
             width  : $sidebar-width;
@@ -13,7 +26,7 @@
 
         .heading {
             font-weight  : bold;
-            font-size    : 15px;
+            font-size    : 16pt;
             margin-bottom: 5px;
 
             &:not(.first) {
@@ -28,7 +41,7 @@
 
         .last-updated {
             text-align: center;
-            color: #444;
+            color     : #aaa;
         }
     }
 
@@ -42,15 +55,15 @@
             width        : $sidebar-width;
             height       : 100%;
             overflow-y   : auto;
-            border-bottom: none;
-            border-right : 1px solid black;
+            // border-bottom: none;
+            // border-right : 1px solid black;
 
             .content {
-                display: flex;
-                flex-direction: column;    
-                margin: 0px;
-                width : 100%;
-                height: 100%;
+                display       : flex;
+                flex-direction: column;
+                margin        : 0px;
+                width         : 100%;
+                height        : 100%;
             }
         }
 

@@ -2,6 +2,11 @@
     min-width    : $cv-width;
     margin-bottom: 10px;
 
+    * {
+        box-sizing: border-box;
+    }
+
+
     h1,
     h2,
     h3,
@@ -23,6 +28,7 @@
     }
 
     a {
+        color          : $link-color-dark;
         text-decoration: none;
 
         &:hover,

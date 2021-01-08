@@ -1,12 +1,6 @@
-$cv-width     : 700px;
-$sidebar-width: 200px;
-$lgray        : #f4f4f4;
-
-#root {
-  * {
-    box-sizing: border-box;
-  }
-}
+$cv-width         : 700px;
+$lgray            : #f4f4f4;
+$link-color-dark  : blue;
 
 @import "general";
 @import "tables";

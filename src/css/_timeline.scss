@@ -5,22 +5,56 @@
     }
 
     .timeline-entry {
-        display         : flex;
-        margin          : 30px 0px;
-        padding         : 10px;
-        background-color: $lgray;
-        border          : 1px solid darkgray;
-        border-radius   : 10px;
+        display      : flex;
+        margin       : 30px 0px;
+        padding      : 10px;
+        color        : black;
+        border       : 2px solid lightblue;
+        border-radius: 10px;
+        font-size    : 12pt;
+
+        // background-color: rgb(110, 94, 255);
+
+        &,
+        .date-div {
+            border-color: blue;
+        }
+
+        &.edu {
+            // background-color: rgb(182, 182, 182);
+
+            &,
+            .date-div {
+                border-color: rgb(32, 32, 32);
+            }
+        }
+
+        &.job {
+            // background-color: rgb(255, 154, 154);
+
+            &,
+            .date-div {
+                border-color: red;
+            }
+        }
+
+        &.other {
+            // background-color: rgb(255, 255, 183);
+
+            &,
+            .date-div {
+                border-color: yellow;
+            }
+        }
 
         .date-div {
             display        : flex;
             justify-content: center;
             align-items    : center;
-            width          : 115px;
+            width          : 130px;
             padding-right  : 15px;
-            border-right   : 1px solid darkgray;
+            border-right   : 2px solid;
             margin-right   : 15px;
-            font-size      : 11pt;
         }
 
         .content-div {
@@ -35,21 +69,19 @@
 
         .company {
             text-align: center;
-            color     : #444;
+            color     : rgb(32, 32, 32);
 
             a {
-                color             : #444;
-                // text-decoration: underline;
+                color: $link-color-dark;
             }
         }
 
         .date {
-            color     : black;
-            text-align: right;
+            text-align : right;
+            font-weight: bold;
         }
 
         .description {
-            // font-style: italic;
             margin-top: 10px;
 
             &>p {

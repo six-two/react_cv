@@ -19,7 +19,7 @@ export function SimpleTimeline(props: Props) {
 
 
 export function renderSimpleTimelineEntry(entry: TimelineEntry) {
-  return <div className="timeline-entry" key={entry.id}>
+  return <div className={`timeline-entry ${entry.type}`} key={entry.id}>
     <div className="date-div">
       <LocalizedTimeSpan
         start={entry.date.start}
