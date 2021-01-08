@@ -39,5 +39,4 @@ const mapStateToProps = (state: ReduxState) => {
     }
 };
 
-export const ReduxComponent = connect(mapStateToProps)(TextTimelines);
-export default ReduxComponent;
+export default connect(mapStateToProps)(TextTimelines);

@@ -24,7 +24,7 @@ export interface JsonData {
 
 export const fallbackState: ReduxState = {
   timelineEntries: [],
-  language: "en",
+  language: "",
   date_precision: C.DATE_PRECISION_MONTH,
 }
 

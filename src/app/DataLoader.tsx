@@ -9,7 +9,7 @@ import buildMetadata from './data/build.json';
 
 export interface Props {
     loaded: boolean,
-    children: any,
+    children?: any,
 }
 
 const loadBuildMetadata = () => {

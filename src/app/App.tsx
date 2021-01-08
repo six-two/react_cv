@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { ReduxState } from './redux/store';
 import DataLoader from './DataLoader';
 import UrlHashManager from './UrlHashManager';
+import LanguageChooserScreen from './LanguageChooserScreen';
 import SectionManager from './sections/SectionManager';
 import '../css/main.scss';
 
@@ -17,13 +20,30 @@ import '../css/main.scss';
 // Maybe add what type of work environment I would like / dislike (table)?
 // -----------------------------------------------------------------
 
+interface Props {
+  lang: string,
+}
 
-export default function App() {
+
+const App = (props: Props) => {
   return <div className="app">
-    <DataLoader>
-      <SectionManager />
-    </DataLoader>
+    {props.lang ?
+      // language set: show the CV in the given language
+      <DataLoader>
+        <SectionManager />
+      </DataLoader>
+      : // otherwise, show the language screen and load the data in the background
+      <>
+        <DataLoader />
+        <LanguageChooserScreen />
+      </>}
 
     <UrlHashManager />
   </div>
 }
+
+const mapStateToProps = (state: ReduxState) => ({
+  lang: state.language,
+});
+
+export default connect(mapStateToProps)(App);
