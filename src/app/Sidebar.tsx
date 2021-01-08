@@ -61,7 +61,7 @@ const Sidebar = (props: Props) => {
         const last_updated_date = props.data.build.date;
         return <div className="sidebar no-print">
             <div className="content">
-                <div className="heading first">Language</div>
+                <div className="heading first">Language / Sprache</div>
                 <LanguageChooser />
                 <div className="heading">
                     <LocalizedText text={date_precision_label} />
