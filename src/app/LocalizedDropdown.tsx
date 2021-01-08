@@ -6,13 +6,15 @@ function LocalizedDropdown(props: Props) {
   const onChange = (e: any) => props.onValueChange(e.target.value);
   const options = [...props.optionMap.entries()];
 
-  return <select value={props.value} onChange={onChange}>
-    {options.map(([key, value]) =>
-      <option key={key} value={key}>
-        {getLocalizedText(value, props.lang)}
-      </option>)
-    }
-  </select>
+  return <div className="select-wrapper">
+    <select className="button-style" value={props.value} onChange={onChange}>
+      {options.map(([key, value]) =>
+        <option key={key} value={key}>
+          {getLocalizedText(value, props.lang)}
+        </option>)
+      }
+    </select>
+  </div>
 }
 
 interface Props {
