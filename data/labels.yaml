@@ -88,7 +88,7 @@ misc:
     de: Anzeigen
   last_updated:
     en: Last updated
-    de: "Zuletzt aktualisiert:"
+    de: "Zuletzt aktualisiert am"
 external_links:
   heading:
     en: External links
