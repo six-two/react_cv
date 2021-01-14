@@ -34,7 +34,11 @@ const VarHeading = (props: VarHeadingProps) => {
 }
 
 const RecursiveSectionRenderer = (props: Props) => {
-    return <div className="section">
+    let className = "section";
+    if (props.section.toc_id) {
+        className += " " + props.section.toc_id;
+    }
+    return <div className={className}>
         <VarHeading
             text={props.section.heading}
             level={props.level + 1}

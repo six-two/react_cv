@@ -82,7 +82,7 @@ const buildSections = (data: JsonData): SectionData[] | null => {
 
         const ratings_section = {
             heading: headings.skills,
-            toc_id: "ratings",
+            toc_id: "skills",
             content: null,
             subsections: [ratings_lang, ratings_prog_lang, ratings_software],
         }

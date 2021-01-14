@@ -13,37 +13,32 @@
         border-radius: 10px;
         font-size    : 12pt;
 
-        // background-color: rgb(110, 94, 255);
-
         &,
         .date-div {
-            border-color: blue;
+            border-color: $border-normal;
         }
 
         &.edu {
-            // background-color: rgb(182, 182, 182);
 
             &,
             .date-div {
-                border-color: rgb(32, 32, 32);
+                border-color: $border-one;
             }
         }
 
         &.job {
-            // background-color: rgb(255, 154, 154);
 
             &,
             .date-div {
-                border-color: red;
+                border-color: $border-two;
             }
         }
 
         &.other {
-            // background-color: rgb(255, 255, 183);
 
             &,
             .date-div {
-                border-color: yellow;
+                border-color: $border-three;
             }
         }
 

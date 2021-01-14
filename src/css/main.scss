@@ -1,6 +1,11 @@
 $cv-width         : 700px;
 $lgray            : #f4f4f4;
 $link-color-dark  : blue;
+// Border colors
+$border-normal: darkblue;
+$border-one: black;
+$border-two: red;
+$border-three: rgb(255, 187, 0);
 
 @import "general";
 @import "tables";
