@@ -1,17 +1,27 @@
 #root {
     .timeline {
-        width : 700px;
-        margin: auto;
+        min-width: $min-width;
+        width    : min(100%, 700px);
+        margin   : auto;
     }
 
     .timeline-entry {
-        display      : flex;
-        margin       : 30px 0px;
-        padding      : 10px;
-        color        : black;
-        border       : 2px solid lightblue;
-        border-radius: 10px;
-        font-size    : 12pt;
+        display       : flex;
+        flex-direction: column; // display the date above
+        margin        : 30px 0px;
+        padding       : 10px;
+        color         : black;
+        border        : 2px solid lightblue;
+        border-radius : 10px;
+        font-size     : 12pt;
+
+        @media (max-width: $screen-medium) {
+            overflow-wrap: break-word;
+        }
+
+        @media (min-width: $screen-medium) {
+            flex-direction: row; // display the date too the right
+        }
 
         &,
         .date-div {
@@ -46,10 +56,20 @@
             display        : flex;
             justify-content: center;
             align-items    : center;
-            width          : 130px;
-            padding-right  : 15px;
-            border-right   : 2px solid;
-            margin-right   : 15px;
+
+            @media (max-width: $screen-medium) {
+                border-bottom : 2px solid;
+                padding-bottom: 5px;
+                margin-bottom : 5px;
+            }
+
+            @media (min-width: $screen-medium) {
+                width        : 130px;
+                padding-right: 15px;
+                border-right : 2px solid;
+                margin-right : 15px;
+
+            }
         }
 
         .content-div {

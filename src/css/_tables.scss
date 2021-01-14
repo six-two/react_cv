@@ -13,7 +13,8 @@
 
     .table,
     .table-style {
-        width        : 400px;
+        min-width    : $min-width;
+        width        : min(100%, 400px);
         margin       : auto;
         border-radius: 10px;
         border       : 2px solid darkblue;

@@ -1,20 +1,23 @@
 #root {
     .ratings {
         .row-style {
-            display: flex;
-            padding: 0px 10px;
+            display      : flex;
+            padding      : 0px 10px;
+            overflow-wrap: break-word;
 
             .text {
-                flex             : 1;
-                display          : flex;
-                /* flex-direction: column;*/
-                align-items      : center;
+                flex       : 1;
+                display    : flex;
+                align-items: center;
+                align-self : flex-start;
+                word-break: break-all;
             }
         }
     }
 
     .rating {
         font-size: 20pt;
+        margin-left: auto;
 
         .outline {
             color: black;

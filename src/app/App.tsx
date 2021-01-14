@@ -16,7 +16,6 @@ import '../css/main.scss';
 
 // --------------------------- TODOs -------------------------------
 // Add skills: frameworks
-// Make it more mobile friendly?
 // Maybe add what type of work environment I would like / dislike (table)?
 // -----------------------------------------------------------------
 

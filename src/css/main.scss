@@ -1,11 +1,15 @@
-$cv-width         : 700px;
-$lgray            : #f4f4f4;
-$link-color-dark  : blue;
+$cv-width        : 700px;
+$lgray           : #f4f4f4;
+$link-color-dark : blue;
+$min-width       : 250px;
 // Border colors
-$border-normal: darkblue;
-$border-one: black;
-$border-two: red;
-$border-three: rgb(255, 187, 0);
+$border-normal   : darkblue;
+$border-one      : black;
+$border-two      : red;
+$border-three    : rgb(255, 187, 0);
+// screen sizes (thresholds / lower border)
+$screen-medium   : 500px;
+$screen-big      : 1000px;
 
 @import "general";
 @import "tables";
