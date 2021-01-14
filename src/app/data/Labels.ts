@@ -43,6 +43,7 @@ export interface ExternalLinks {
   me: LString,
   projects: LString,
   source: LString,
+  contact: LString,
 }
 
 export interface LabelTranslations {
@@ -129,6 +130,7 @@ const loadExternalLinks = (): ExternalLinks => {
     me: check(l.me),
     projects: check(l.projects),
     source: check(l.source),
+    contact: check(l.contact),
   };
 }
 

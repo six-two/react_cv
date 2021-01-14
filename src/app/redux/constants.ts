@@ -13,4 +13,5 @@ export const DATE_PRECISION_YEAR = "year";
 export const MY_WEBSITE = "https://six-two.dev";
 export const MY_PROJECTS = "https://projects.six-two.dev";
 export const CV_SOURCE = "https://github.com/six-two/react_cv";
+export const CONTACT_FORM = "https://contact.six-two.dev";
 

@@ -81,6 +81,7 @@ const Sidebar = (props: Props) => {
                     <Entry title={links.me} url={C.MY_WEBSITE} />
                     <Entry title={links.projects} url={C.MY_PROJECTS} />
                     <Entry title={links.source} url={C.CV_SOURCE} />
+                    <Entry title={links.contact} url={C.CONTACT_FORM} />
                 </ul>
 
                 <div className="expand" />
