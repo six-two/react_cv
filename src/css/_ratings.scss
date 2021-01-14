@@ -4,19 +4,16 @@
             display      : flex;
             padding      : 0px 10px;
             overflow-wrap: break-word;
+            align-items  : center;
 
             .text {
-                flex       : 1;
-                display    : flex;
-                align-items: center;
-                align-self : flex-start;
                 word-break: break-all;
             }
         }
     }
 
     .rating {
-        font-size: 20pt;
+        font-size  : 20pt;
         margin-left: auto;
 
         .outline {
