@@ -1,5 +1,19 @@
 # Interactive CV
 
+## Features
+
+- Support for multiple languages
+- Responsive design *(works on devices that have at least 250px width)*
+- Data supplied via easy to write / edit YAML files
+
+## Common problems
+
+### I edited one of the data files, but I can not see the new data
+
+You can either:
+- Run `<repo_dir>/data/yaml2json.py`
+- Restart the `npm start` process
+
 ## Available Scripts
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
