@@ -54,6 +54,12 @@ const TableOfContents = (props: TocProps) => {
 
 const Sidebar = (props: Props) => {
     if (props.data) {
+        const localizeLink = (url: string) => {
+            const url_builder = new URL(url);
+            url_builder.searchParams.set("lang", props.lang);
+            return url_builder.toString();
+        }
+
         const headings = props.data.labels.headings;
         const links = props.data.labels.external_links;
         const date_precision_label = props.data.labels.settings.date_precision.label;
@@ -81,7 +87,7 @@ const Sidebar = (props: Props) => {
                     <Entry title={links.me} url={C.MY_WEBSITE} />
                     <Entry title={links.projects} url={C.MY_PROJECTS} />
                     <Entry title={links.source} url={C.CV_SOURCE} />
-                    <Entry title={links.contact} url={C.CONTACT_FORM} />
+                    <Entry title={links.contact} url={localizeLink(C.CONTACT_FORM)} />
                 </ul>
 
                 <div className="expand" />
