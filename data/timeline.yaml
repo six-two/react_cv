@@ -26,7 +26,7 @@
   x: edu
   t:
     en: |-
-      - Courses included: embedded systems (C & assembly), Android app development (Java), distributed systems, theoretical informatics, IT security, machine learning, 
+      - Courses included: embedded systems (C & assembly), Android app development (Java), distributed systems, theoretical informatics, IT security, machine learning,
       - Project work: Attacks on WPA2-WLAN networks
       - Bachelors thesis: Development and implementation of a WLAN-Intrusion Detection System
       - Final grade: 1.7 (an a scale from 1.0 [best] to 5.0 [failed])
@@ -91,7 +91,7 @@
     l:
       en: https://en.wikipedia.org/wiki/New_Zealand
       de: https://de.wikipedia.org/wiki/Neuseeland
-  d: 2020-02-25 - now
+  d: 2020-02-25 - 2021-02-03
   x: other
 
 - h:
